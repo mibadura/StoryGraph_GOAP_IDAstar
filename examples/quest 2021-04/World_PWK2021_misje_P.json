@@ -1,0 +1,1320 @@
+[
+    {
+        "Title": "World / Świat",
+        "TitleGeneric": "",
+        "Description": "Produkcja składająca się wyłącznie z lewej strony.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Id": "2370050636416",
+                    "Name": "Road",
+                    "Characters": [
+                        {
+                            "Name": "Main_hero",
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 30
+                            },
+                            "Items": [
+                                {
+                                    "Name": "Sword",
+                                    "Attributes": {
+                                        "IsWeapon": true,
+                                        "Value": 1000
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Lawyer",
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 100
+                            },
+                            "Narration": [
+                                {
+                                    "Name": "Game_goal",
+                                    "Attributes": {
+                                        "Knowledge": "The top-secret documents have to be delivered to Overseas Territory. Take them and board the ship. / Tajne dokumenty, któe trzeba dostarczyć do zamorskiego królestwa. Przejmij je i dotrzyj na statek."
+                                    }
+                                },
+                                {
+                                    "Name": "Pay_tax",
+                                    "Attributes": {
+                                        "Knowledge": "Bohater powinien zapłacić podatek w wysokości 20 coinów"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ],
+                            "Items": [
+                                {
+                                    "Name": "Documents",
+                                    "Attributes": {
+                                        "IsTopSecret": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Traveler",
+                            "Items": [
+                                {
+                                    "Name": "Sword",
+                                    "Attributes": {
+                                        "Value": 1000,
+                                        "IsWeapon": true
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 70
+                            },
+                            "Narration": [
+                                {
+                                    "Name": "Captain_lost_compass",
+                                    "Attributes": {
+                                        "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                },
+                                {
+                                    "Name": "Can_play_cards",
+                                    "Attributes": {
+                                        "Knowledge": "Potrafi grać w karty"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Advertising_column",
+                            "Attributes": {},
+                            "Narration": [
+                                {
+                                    "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
+                                    "Attributes": {
+                                        "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052270592"
+                        },
+                        {
+                            "Destination": "2370050637376"
+                        },
+                        {
+                            "Destination": "2370052115456"
+                        },
+                        {
+                            "Destination": "2370050694720"
+                        },
+                        {
+                            "Destination": "2370052257664"
+                        },
+                        {
+                            "Destination": "2370052247040"
+                        },
+                        {
+                            "Destination": "2370052174464"
+                        },
+                        {
+                            "Destination": "2370052212224"
+                        },
+                        {
+                            "Destination": "2370052295744"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052306624",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "2370052307200"
+                        },
+                        {
+                            "Destination": "2370052306944"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052307200",
+                    "Name": "Forest",
+                    "Items": [
+                        {
+                            "Name": "Herbs",
+                            "Attributes": {
+                                "IsPoison": true,
+                                "NutritionalValue": 10,
+                                "Value": 10
+                            }
+                        },
+                        {
+                            "Name": "Wood",
+                            "Attributes": {
+                                "Value": 300
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052306624"
+                        },
+                        {
+                            "Destination": "2370052305344"
+                        },
+                        {
+                            "Destination": "2370052307072"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052305344",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "2370052307200"
+                        },
+                        {
+                            "Destination": "2370052295616"
+                        },
+                        {
+                            "Destination": "2370052045184"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052295616",
+                    "Name": "Forest",
+                    "Characters": [
+                        {
+                            "Name": "Wolf",
+                            "Attributes": {
+                                "HP": 20
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Herbs",
+                            "Attributes": {
+                                "NutritionalValue": 10,
+                                "Value": 10
+                            }
+                        },
+                        {
+                            "Name": "Wood",
+                            "Attributes": {
+                                "Value": 300
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052305344"
+                        },
+                        {
+                            "Destination": "2370052270592"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052306944",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "2370052271552"
+                        },
+                        {
+                            "Destination": "2370052306624"
+                        },
+                        {
+                            "Destination": "2370052307072"
+                        },
+                        {
+                            "Destination": "2370052139264"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052307072",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "2370052307200"
+                        },
+                        {
+                            "Destination": "2370052306944"
+                        },
+                        {
+                            "Destination": "2370052045184"
+                        },
+                        {
+                            "Destination": "2370015411776"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052045184",
+                    "Name": "Forest",
+                    "Items": [
+                        {
+                            "Name": "Herbs",
+                            "Attributes": {
+                                "IsPoison": true,
+                                "Value": 10
+                            }
+                        },
+                        {
+                            "Name": "Wood",
+                            "Attributes": {
+                                "Value": 300
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052305344"
+                        },
+                        {
+                            "Destination": "2370052307072"
+                        },
+                        {
+                            "Destination": "2370052270592"
+                        },
+                        {
+                            "Destination": "2370052342848"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052270592",
+                    "Name": "Forest",
+                    "Characters": [
+                        {
+                            "Name": "Wolf",
+                            "Attributes": {
+                                "HP": 20
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Herbs",
+                            "Attributes": {
+                                "Value": 10,
+                                "IsPoison": true
+                            }
+                        },
+                        {
+                            "Name": "Wood",
+                            "Attributes": {
+                                "Value": 300
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050636416"
+                        },
+                        {
+                            "Destination": "2370052295616"
+                        },
+                        {
+                            "Destination": "2370052045184"
+                        },
+                        {
+                            "Destination": "2370052060032"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052139264",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "2370052137856"
+                        },
+                        {
+                            "Destination": "2370052306944"
+                        },
+                        {
+                            "Destination": "2370015411776"
+                        },
+                        {
+                            "Destination": "2370050667072"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370015411776",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "2370052146432"
+                        },
+                        {
+                            "Destination": "2370052307072"
+                        },
+                        {
+                            "Destination": "2370052139264"
+                        },
+                        {
+                            "Destination": "2370052342848"
+                        },
+                        {
+                            "Destination": "2370050667008"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052342848",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "2370052045184"
+                        },
+                        {
+                            "Destination": "2370015411776"
+                        },
+                        {
+                            "Destination": "2370052060032"
+                        },
+                        {
+                            "Destination": "2370050666560"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052060032",
+                    "Name": "Forest",
+                    "Characters": [
+                        {
+                            "Name": "Bandit",
+                            "Items": [],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 5
+                            }
+                        },
+                        {
+                            "Name": "Bandit",
+                            "Items": [
+                                {
+                                    "Name": "Knife",
+                                    "Attributes": {
+                                        "IsWeapon": true,
+                                        "Value": 500
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 5
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Herbs",
+                            "Attributes": {
+                                "NutritionalValue": 15,
+                                "Value": 10
+                            }
+                        },
+                        {
+                            "Name": "Wood",
+                            "Attributes": {
+                                "Value": 300
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052270592"
+                        },
+                        {
+                            "Destination": "2370052342848"
+                        },
+                        {
+                            "Destination": "2370052079168"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370050667072",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "2370052139264"
+                        },
+                        {
+                            "Destination": "2370050667008"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370050667008",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "2370015411776"
+                        },
+                        {
+                            "Destination": "2370050667072"
+                        },
+                        {
+                            "Destination": "2370050666560"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370050666560",
+                    "Name": "Forest",
+                    "Characters": [
+                        {
+                            "Name": "Prisoner",
+                            "Attributes": {
+                                "HP": 100,
+                                "IsWanted": true
+                            },
+                            "Items": [
+                                {
+                                    "Name": "Elixir",
+                                    "Attributes": {
+                                        "IsMysterious": true
+                                    }
+                                }
+                            ],
+                            "Narration": [
+                                {
+                                    "Name": "Prisoner_needs_help",
+                                    "Attributes": {
+                                        "Knowledge": "Za pomoc w ukryciu się przed pościgiem więzień oferuje miksturę."
+                                    }
+                                },
+                                {
+                                    "Name": "Prisoner_needs_hero_to_kill_wolves",
+                                    "Attributes": {
+                                        "Knowledge": "Więzień potrzebuje cię do zabicia wilków w jaskini, aby mógł się ukryć."
+                                    }
+                                },
+                                {
+                                    "Name": "Prisoner_was_send_by_the_mage",
+                                    "Attributes": {
+                                        "Knowledge": "Więzień został tu wysłany przez potężnego maga z daleka, aby porozmawiać ze smokiem. Dostał tę tajemniczą miksturę na drogę, ale nie wie, do czego służy."
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052078016"
+                        },
+                        {
+                            "Destination": "2370052342848"
+                        },
+                        {
+                            "Destination": "2370050667008"
+                        },
+                        {
+                            "Destination": "2370052079168"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052079168",
+                    "Name": "Forest",
+                    "Items": [
+                        {
+                            "Name": "Herbs",
+                            "Attributes": {
+                                "NutritionalValue": 10,
+                                "Value": 10
+                            }
+                        },
+                        {
+                            "Name": "Wood",
+                            "Attributes": {
+                                "Value": 300
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052060032"
+                        },
+                        {
+                            "Destination": "2370050666560"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370050637376",
+                    "Name": "Peasants_hut",
+                    "Attributes": {
+                        "IsPrivate": true
+                    },
+                    "Characters": [
+                        {
+                            "Name": "Peasant",
+                            "Items": [],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 2
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050636416"
+                        },
+                        {
+                            "Destination": "2370050637184"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370050637184",
+                    "Name": "Field",
+                    "Items": [
+                        {
+                            "Name": "Crops",
+                            "Attributes": {
+                                "Value": 5
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050637376"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052115456",
+                    "Name": "Inn",
+                    "Characters": [
+                        {
+                            "Name": "Drunkard",
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 0
+                            },
+                            "Items": [
+                                {
+                                    "Name": "Alcohol",
+                                    "Attributes": {
+                                        "Value": 5
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Innkeeper",
+                            "Items": [
+                                {
+                                    "Name": "Alcohol",
+                                    "Attributes": {
+                                        "Value": 5
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 800
+                            },
+                            "Narration": [
+                                {
+                                    "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
+                                    "Attributes": {
+                                        "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Innkeeper_assistant",
+                            "Items": [],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 50
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050636416"
+                        },
+                        {
+                            "Destination": "2370050694720"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052257664",
+                    "Name": "Town_hall",
+                    "Connections": [
+                        {
+                            "Destination": "2370050636416"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052247040",
+                    "Name": "Prison",
+                    "Characters": [
+                        {
+                            "Name": "Prison_guard",
+                            "Items": [
+                                {
+                                    "Name": "Sword",
+                                    "Attributes": {
+                                        "Value": 800,
+                                        "IsWeapon": true
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 50,
+                                "IsDrunk": false
+                            }
+                        },
+                        {
+                            "Name": "Prison_governor",
+                            "Items": [
+                                {
+                                    "Name": "Sword",
+                                    "Attributes": {
+                                        "Value": 1200,
+                                        "IsWeapon": true
+                                    }
+                                },
+                                {
+                                    "Name": "Keys",
+                                    "Attributes": {}
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 500
+                            }
+                        },
+                        {
+                            "Name": "Prisoner",
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 0
+                            }
+                        },
+                        {
+                            "Name": "Bandit",
+                            "Attributes": {
+                                "HP": 100,
+                                "IsBrotherOfMainHero": true
+                            },
+                            "Narration": [
+                                {
+                                    "Name": "Is_Brother_Of_Main_Hero",
+                                    "Attributes": {
+                                        "Knowledge": "Bandyta uratowany z więzienia jest bratem gównego bohatera"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050636416"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052174464",
+                    "Name": "Market",
+                    "Characters": [
+                        {
+                            "Name": "Merchant",
+                            "Items": [
+                                {
+                                    "Name": "Fiddle_stick",
+                                    "Attributes": {
+                                        "Value": 50,
+                                        "DiscountGroup": "Fiddle_stick"
+                                    }
+                                }
+                            ],
+                            "Narration": [
+                                {
+                                    "Name": "Merchant_will_give_discounts_in_exchange_for_mini_quests",
+                                    "Attributes": {
+                                        "Knowledge": "Merchant will give the Fiddle_stick for half of the original price if the Hero will provide him with some Horse_Bristles. If the Hero helps him to get rid of the Rats in the Market, he will also half the price. If the Hero does both things, he offers the Fiddle_stick for free. / Handlarz sprzeda Bohaterowi Smyczek za połowę oryginalnej ceny, jeśli Bohater da mu trochę Włosia Końskiego. Tak samo, jeśli Bohater pozbędzie się Szczurów z Targowiska i przedstawi Ogon_Szczura jako dowód. Jeśli Bohater wykona oba zadania, Handlarz oferuje Smyczek za darmo."
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 1000
+                            }
+                        },
+                        {
+                            "Name": "Merchant_respected",
+                            "Items": [],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 2000
+                            }
+                        },
+                        {
+                            "Name": "Rat",
+                            "Attributes": {
+                                "HP": 3
+                            }
+                        },
+                        {
+                            "Name": "Rat",
+                            "Attributes": {
+                                "HP": 3
+                            }
+                        },
+                        {
+                            "Name": "Rat",
+                            "Attributes": {
+                                "HP": 3
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Advertising_column",
+                            "Attributes": {}
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050636416"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Lumberjacks_hut",
+                    "Attributes": {
+                        "IsPrivate": true
+                    },
+                    "Characters": [
+                        {
+                            "Name": "Lumberjack",
+                            "Items": [
+                                {
+                                    "Name": "Axe",
+                                    "Attributes": {
+                                        "Value": 800,
+                                        "IsWeapon": true
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 320
+                            },
+                            "Narration": [
+                                {
+                                    "Name": "Help_with_wood",
+                                    "Attributes": {
+                                        "Knowledge": "Drwal potrzebuje pomocy przy przyniesieniu drewna za 300 coinów"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Daughter",
+                            "Attributes": {
+                                "HP": 100
+                            },
+                            "Items": [
+                                {
+                                    "Name": "Axe",
+                                    "Attributes": {
+                                        "Value": 800,
+                                        "IsWeapon": true
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Saw",
+                            "Attributes": {
+                                "Value": 700
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052305344"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370050694720",
+                    "Name": "Pasture",
+                    "Characters": [
+                        {
+                            "Name": "Sheep",
+                            "Items": [],
+                            "Attributes": {
+                                "HP": 10
+                            }
+                        },
+                        {
+                            "Name": "Sheep",
+                            "Attributes": {
+                                "HP": 10
+                            }
+                        },
+                        {
+                            "Name": "Sheep",
+                            "Attributes": {
+                                "HP": 10
+                            }
+                        },
+                        {
+                            "Name": "Shepherd",
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 210
+                            },
+                            "Narration": [
+                                {
+                                    "Name": "Help_with_sheep",
+                                    "Attributes": {
+                                        "Knowledge": "Pasterz potrzebuje pomocy przy pilnowaniu i odprowadzeniu owiec za 200 coinów"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                },
+                                {
+                                    "Name": "Captain_lost_compass",
+                                    "Attributes": {
+                                        "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                },
+                                {
+                                    "Name": "Can_play_cards",
+                                    "Attributes": {
+                                        "Knowledge": "Potrafi grać w karty"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                },
+                                {
+                                    "Name": "Shepherd_is_suspicious_towards_the_fiddler",
+                                    "Attributes": {
+                                        "Knowledge": "Shepherd thinks that the Fiddler is a bad man, he suspects the Fiddler is up to nothing good here on the Pasture. Advices not to help him. / Pasterz myśli, że Skrzypek knuje coś niedobrego na Pastwisku. Radzi, by lepiej mu nie pomogać."
+                                    }
+                                },
+                                {
+                                    "Name": "Shepherd_lost_his_sheep_and_asks_for_help_with_the_fiddler",
+                                    "Attributes": {
+                                        "Knowledge": "One of the Shepherd's sheep has been abducted! Turns out Shepherd was right, the Fiddler turned out to be a bad man, utilising his music for evil by mesmerising unsuspecting creatures. He hid somewhere in the forest, waiting for somebody to buy the stolen animal. Shepherd asks the Hero for rescuing the poor wooly soul, offering 30 coins for the help. / Jedna z owiec Pasterza została uprowadzona! Okazuje się, że Pasterz miał rację, Skrzypek jest złym człowiekiem, który korzysta ze swojej muzyki w niecnych celach, omamiając wrażliwe istoty. Ponoć ukrył się gdzieś w lesie i czeka na chętnego kupca na skradzone zwierzę. Pasterz prosi Bohatera o ratunek dla zwierzęcie, oferuje 30 monet za pomoc."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Fiddler",
+                            "Attributes": {
+                                "HP": 15,
+                                "Money": 5
+                            },
+                            "Items": [
+                                {
+                                    "Name": "Keys",
+                                    "Attributes": {}
+                                },
+                                {
+                                    "Name": "Fiddle",
+                                    "Attributes": {
+                                        "Value": 50
+                                    }
+                                }
+                            ],
+                            "Narration": [
+                                {
+                                    "Name": "Fiddler_wants_a_Fiddle_stick_and_Merchant_on_the_Market_has_it",
+                                    "Attributes": {
+                                        "Knowledge": "There is a Fiddler on the Pasture who needs a Fiddle_stick. In exchange he offers some Keys he found on the Road some time ago. He says one Merchant in the Market has one for sale. / Na pastwisku znajduje się skrzypek, który oferuje znalezione na drodze klucze każdemu, kto mu sprezentuje Smyczek. Skrzypek mówi, że któryś handlarz na targowisku ma Smyczek."
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050636416"
+                        },
+                        {
+                            "Destination": "2370052296448"
+                        },
+                        {
+                            "Destination": "2370052295744"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052212224",
+                    "Name": "Village",
+                    "Characters": [
+                        {
+                            "Name": "Common_man",
+                            "Items": [],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 3
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Well",
+                            "Attributes": {}
+                        },
+                        {
+                            "Name": "Stone",
+                            "Attributes": {
+                                "Value": 2
+                            }
+                        },
+                        {
+                            "Name": "Advertising_column",
+                            "Attributes": {}
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050636416"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052296448",
+                    "Name": "Shepherds_hideout",
+                    "Attributes": {
+                        "IsPrivate": true
+                    },
+                    "Connections": [
+                        {
+                            "Destination": "2370050694720"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052146432",
+                    "Name": "Wizards_hut",
+                    "Attributes": {
+                        "IsPrivate": true
+                    },
+                    "Characters": [
+                        {
+                            "Name": "Wizard",
+                            "Items": [],
+                            "Attributes": {
+                                "HP": 200,
+                                "Money": 2000
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Elixir",
+                            "Attributes": {
+                                "Value": 30,
+                                "NutritionalValue": 1000
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370015411776"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052078016",
+                    "Name": "Cave",
+                    "Characters": [
+                        {
+                            "Name": "Troll",
+                            "Attributes": {
+                                "HP": 50
+                            }
+                        },
+                        {
+                            "Name": "Wolf",
+                            "Attributes": {
+                                "HP": 20
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Stone",
+                            "Attributes": {
+                                "Value": 2
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050666560"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052137856",
+                    "Name": "Port",
+                    "Items": [
+                        {
+                            "Name": "Boat",
+                            "Attributes": {
+                                "Value": 10000
+                            }
+                        },
+                        {
+                            "Name": "Advertising_column",
+                            "Attributes": {},
+                            "Narration": [
+                                {
+                                    "Name": "Brother_quest_tavern_hint",
+                                    "Attributes": {
+                                        "Knowledge": "Istnieje możliwość dostarczenia posiłków dla więźniów. Oczywiscie, za dodatkową oplatą. Pakunki będą przyjmowane na drodze przed więzieniem. Pobliska Taverna może okazać się pomocna."
+                                    }
+                                },
+                                {
+                                    "Name": "Brother_quest_start_active",
+                                    "Attributes": {
+                                        "Knowledge": "Brat siedzi w więzieniu. Trzeba go wydostać."
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052139264"
+                        },
+                        {
+                            "Destination": "2370052124608"
+                        },
+                        {
+                            "Destination": "2370052087104"
+                        },
+                        {
+                            "Destination": "2370052051584"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052124608",
+                    "Name": "Island",
+                    "Connections": [
+                        {
+                            "Destination": "2370052137856"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052087104",
+                    "Name": "Tavern",
+                    "Characters": [
+                        {
+                            "Name": "Innkeeper",
+                            "Items": [],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 1000
+                            }
+                        },
+                        {
+                            "Name": "Miss",
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 10
+                            },
+                            "Items": [
+                                {
+                                    "Name": "Alcohol",
+                                    "Attributes": {
+                                        "Value": 3
+                                    }
+                                },
+                                {
+                                    "Name": "File",
+                                    "Attributes": {}
+                                },
+                                {
+                                    "Name": "Mutton_chop",
+                                    "Attributes": {}
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Traveler",
+                            "Items": [
+                                {
+                                    "Name": "Sword",
+                                    "Attributes": {
+                                        "Value": 1000,
+                                        "IsWeapon": true
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 70
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052137856"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052051584",
+                    "Name": "Ship",
+                    "Characters": [
+                        {
+                            "Name": "Ship_captain",
+                            "Items": [
+                                {
+                                    "Name": "Sword",
+                                    "Attributes": {
+                                        "Value": 1200,
+                                        "IsWeapon": true
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 2000
+                            }
+                        },
+                        {
+                            "Name": "Ship_guard",
+                            "Items": [
+                                {
+                                    "Name": "Sword",
+                                    "Attributes": {
+                                        "Value": 800,
+                                        "IsWeapon": true
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 50
+                            }
+                        },
+                        {
+                            "Name": "Ship_guard",
+                            "Items": [
+                                {
+                                    "Name": "Knife",
+                                    "Attributes": {
+                                        "IsWeapon": true,
+                                        "Value": 500
+                                    }
+                                }
+                            ],
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 50
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Boat",
+                            "Attributes": {
+                                "Value": 10000
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052137856"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052271552",
+                    "Name": "Dragons_lair",
+                    "Characters": [
+                        {
+                            "Name": "Dragon",
+                            "Items": [],
+                            "Attributes": {
+                                "HP": 1000
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Name": "Dragon_egg",
+                            "Attributes": {
+                                "Value": 10000
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370052306624"
+                        }
+                    ]
+                },
+                {
+                    "Id": "2370052295744",
+                    "Name": "Barn",
+                    "Characters": [
+                        {
+                            "Name": "Horse",
+                            "Attributes": {
+                                "HP": 30
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "2370050694720"
+                        },
+                        {
+                            "Destination": "2370050636416"
+                        }
+                    ]
+                }
+            ]
+        },
+        "RSide": {},
+        "Instructions": []
+    }
+]

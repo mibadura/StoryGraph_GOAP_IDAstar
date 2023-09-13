@@ -1,0 +1,231 @@
+[
+    {
+        "Title": "World_q0 / Świat_q0",
+        "TitleGeneric": "",
+        "Description": "Swiat, w którym może wydarzyć się misja DragonStory.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Id": "3062389216192",
+                    "Name": "Road",
+                    "Connections": [
+                        {
+                            "Destination": "3062389220032"
+                        },
+                        {
+                            "Destination": "3062389223168"
+                        },
+                        {
+                            "Destination": "3062389221504"
+                        },
+                        {
+                            "Destination": "3062389222400"
+                        },
+                        {
+                            "Destination": "3062389217408"
+                        }
+                    ]
+                },
+                {
+                    "Id": "3062389217408",
+                    "Name": "Wizards_hut",
+                    "Attributes": {
+                        "IsPrivate": true
+                    },
+                    "Characters": [
+                        {
+                            "Id": "3062389217920",
+                            "Name": "Wizard",
+                            "Attributes": {
+                                "HP": 200,
+                                "Money": 100,
+                                "IsAuthority": true
+                            }
+                        }
+                    ],
+                    "Items": [
+                        {
+                            "Id": "3062389218496",
+                            "Name": "Elixir",
+                            "Attributes": {
+                                "Value": 10,
+                                "NutritionalValue": 1000
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "3062389216192"
+                        }
+                    ]
+                },
+                {
+                    "Id": "3062389219008",
+                    "Name": "Dragons_lair",
+                    "Characters": [
+                        {
+                            "Id": "3062389219264",
+                            "Name": "Dragon",
+                            "Attributes": {
+                                "HP": 1000
+                            }
+                        },
+                        {
+                            "Id": "3062389220288",
+                            "Name": "Main_hero",
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 10
+                            },
+                            "Items": [
+                                {
+                                    "Id": "3062389220608",
+                                    "Name": "Sword",
+                                    "Attributes": {
+                                        "Value": 1000
+                                    }
+                                },
+                                {
+                                    "Id": "3062389220864",
+                                    "Name": "Herbs",
+                                    "Attributes": {
+                                        "Value": 30,
+                                        "IsPoison": true
+                                    }
+                                },
+                                {
+                                    "Id": "3062389219584",
+                                    "Name": "Dragon_egg",
+                                    "Attributes": {
+                                        "Value": 4000
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "3062389220032"
+                        }
+                    ]
+                },
+                {
+                    "Id": "3062389220032",
+                    "Name": "Forest",
+                    "Connections": [
+                        {
+                            "Destination": "3062389216192"
+                        },
+                        {
+                            "Destination": "3062389219008"
+                        }
+                    ]
+                },
+                {
+                    "Id": "3062389221504",
+                    "Name": "Pasture",
+                    "Characters": [
+                        {
+                            "Id": "3062389221760",
+                            "Name": "Sheep",
+                            "Attributes": {
+                                "HP": 10,
+                                "NutritionalValue": 20
+                            }
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "3062389216192"
+                        },
+                        {
+                            "Destination": "3062389222400"
+                        }
+                    ]
+                },
+                {
+                    "Id": "3062389222400",
+                    "Name": "Village",
+                    "Items": [
+                        {
+                            "Id": "3062389222656",
+                            "Name": "Well"
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "3062389216192"
+                        },
+                        {
+                            "Destination": "3062389221504"
+                        }
+                    ]
+                },
+                {
+                    "Id": "3062389223168",
+                    "Name": "Inn",
+                    "Characters": [
+                        {
+                            "Id": "3062389223424",
+                            "Name": "Innkeeper",
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 1200
+                            },
+                            "Items": [
+                                {
+                                    "Id": "3062389223744",
+                                    "Name": "Poison",
+                                    "Attributes": {
+                                        "Value": 1000,
+                                        "IsPoison": true
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "Id": "3062389224000",
+                            "Name": "Drunkard",
+                            "Attributes": {
+                                "HP": 100,
+                                "Money": 0,
+                                "IsTroublemaker": true
+                            },
+                            "Items": [
+                                {
+                                    "Id": "3062389224384",
+                                    "Name": "Alcohol",
+                                    "Attributes": {
+                                        "Value": 3,
+                                        "NutritionalValue": 1,
+                                        "IsRotten": true
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "Connections": [
+                        {
+                            "Destination": "3062389216192"
+                        },
+                        {
+                            "Destination": "3062389221504"
+                        }
+                    ]
+                },
+                {
+                    "Id": "3062389225024",
+                    "Name": "Prison",
+                    "Connections": [
+                        {
+                            "Destination": "3062389216192"
+                        }
+                    ]
+                }
+            ]
+        },
+        "RSide": {},
+        "Instructions": []
+    }
+]

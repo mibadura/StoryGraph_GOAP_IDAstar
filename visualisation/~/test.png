@@ -1,0 +1,28 @@
+digraph {
+	overlap=false
+	splines=true
+	V1 [label=Locations]
+	V2 [label=Inn]
+	V1 -> V2
+	V3 [label=Characters]
+	V4 [label=Main_hero]
+	V3 -> V4
+	V5 [label=Narration]
+	V6 [label=Innkeepers_gratitude]
+	V5 -> V6
+	V7 [label=dupa]
+	V5 -> V7
+	V8 [label=Items]
+	V9 [label=Broom]
+	V8 -> V9
+	V10 [label=Innkeeper]
+	V3 -> V10
+	V11 [label=Items]
+	V12 [label=Poison]
+	V11 -> V12
+	V13 [label=Broom]
+	V11 -> V13
+	V14 [label=Items]
+	V15 [label=Broom]
+	V14 -> V15
+}

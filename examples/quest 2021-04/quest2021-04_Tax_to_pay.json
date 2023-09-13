@@ -1,0 +1,587 @@
+[
+    {
+        "Title": "Finding out from Lawyer that Main_hero needs to pay tax / Dowiedzenie się od Prawnika, że Bohater powinien zapłacić podatek",
+        "TitleGeneric": "Knowledge creation / Utworzenie wiedzy fabularnej",
+        "Description": "Bohater dowiaduje się, że powinien zapłacić podatek w wysokości 20 coinów.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Id": "Somewhere",
+                    "Attributes": {},
+                    "Characters": [
+                        {
+                            "Name": "Lawyer",
+                            "Attributes": {},
+                            "Characters": [],
+                            "Items": [],
+                            "Narration": [
+                                {
+                                    "Name": "Pay_tax",
+                                    "Attributes": {
+                                        "Knowledge": "Bohater powinien zapłacić podatek w wysokości 20 coinów"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Main_hero",
+                            "IsObject" : true,
+                            "Attributes": {},
+                            "Characters": [],
+                            "Items": []
+                        }
+                    ],
+                    "Items": [],
+                    "Connections": []
+                }
+            ]
+        },
+        "RSide": {},
+        "Preconditions": [],
+        "Instructions": [
+            {
+                "Op": "create",
+                "In": "Main_hero/Narration",
+                "Sheaf": {
+                    "Name": "Pay_tax",
+                    "Attributes": {
+                        "Knowledge": "Bohater powinien zapłacić podatek w wysokości 20 coinów"
+                    }
+                }
+            },
+            {
+                "Op": "set",
+                "Attribute": "Main_hero.IsDebted",
+                "Value": true
+            }
+        ]
+    },
+    {
+        "Title": "Finding out from Shepherd that he needs help with his sheep / Dowiedzenie się od Pasterza, że potrzebuje on pomocy przy owcach",
+        "TitleGeneric": "Knowledge creation / Utworzenie wiedzy fabularnej",
+        "Description": "Bohater dowiaduje się, że Pasterz (Shepherd) potrzebuje pomocy przy pilnowaniu i odprowadzeniu owiec, zapłaci za to 200 coinów.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Id": "Somewhere",
+                    "Attributes": {},
+                    "Characters": [
+                        {
+                            "Name": "Shepherd",
+                            "Attributes": {},
+                            "Characters": [],
+                            "Items": [],
+                            "Narration": [
+                                {
+                                    "Name": "Help_with_sheep",
+                                    "Attributes": {
+                                        "Knowledge": "Pasterz potrzebuje pomocy przy pilnowaniu i odprowadzeniu owiec za 200 coinów"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Main_hero",
+                            "IsObject": true,
+                            "Attributes": {},
+                            "Characters": [],
+                            "Items": []
+                        }
+                    ],
+                    "Items": [],
+                    "Connections": []
+                }
+            ]
+        },
+        "RSide": {},
+        "Preconditions": [],
+        "Instructions": [
+            {
+                "Op": "create",
+                "In": "Main_hero/Narration",
+                "Sheaf": {
+                    "Name": "Help_with_sheep",
+                    "Attributes": {
+                        "Knowledge": "Pasterz potrzebuje pomocy przy pilnowaniu i odprowadzeniu owiec za 200 coinów"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "Title": "Learning how to play cards from Shepherd / Nauka gry w karty przez Pasterza",
+        "TitleGeneric": "Character’s feature change / Zmiana własności postaci",
+        "Description": "Pasterz uczy bohatera grać w karty.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Id": "Somewhere",
+                    "Attributes": {},
+                    "Characters": [
+                        {
+                            "Name": "Main_hero",
+							"IsObject": true,
+                            "Attributes": {},
+                            "Items": [],
+                            "Narration": [
+                                {
+                                    "Name": "Help_with_sheep",
+                                    "Attributes": {
+                                        "Knowledge": "Pasterz potrzebuje pomocy przy pilnowaniu i odprowadzeniu owiec za 200 coinów"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Shepherd",
+							"IsObject": true,
+                            "Attributes": {},
+                            "Items": [],
+                            "Narration": [
+                                {
+                                    "Name": "Captain_lost_compass",
+                                    "Attributes": {
+                                        "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                },
+                                {
+                                    "Name": "Can_play_cards",
+                                    "Attributes": {
+                                        "Knowledge": "Potrafi grać w karty"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        }
+                    ],
+                    "Items": [],
+                    "Connections": []
+                }
+            ]
+        },
+        "RSide": {},
+        "Preconditions": [],
+        "Instructions": [
+            {
+                "Op": "create",
+                "In": "Main_hero/Narration",
+                "Sheaf": {
+                    "Name": "Can_play_cards",
+                    "Attributes": {
+                        "Knowledge": "Potrafi grać w karty"
+                    }
+                }
+            },
+            {
+                "Op": "create",
+                "In": "Main_hero/Narration",
+                "Sheaf": {
+                    "Name": "Captain_lost_compass",
+                    "Attributes": {
+                        "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "Title": "Creating a group with Shepherd and Sheep / Stworzenie grupy z Pasterzem i owcami",
+        "TitleGeneric": "Overwhelming character / Przejęcie kontroli nad postacią",
+        "Description": "Main_hero przejmuje kontrolę nad pasterzem i owcami.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Name": "Pasture",
+                    "Characters": [
+                        {
+                            "Name": "Main_hero",
+                            "IsObject": true,
+                            "Narration": [
+                                {
+                                    "Name": "Help_with_sheep",
+                                    "Attributes": {
+                                        "Knowledge": "Pasterz potrzebuje pomocy przy pilnowaniu i odprowadzeniu owiec za 200 coinów"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                },
+                                {
+                                    "Name": "Can_play_cards",
+                                    "Attributes": {
+                                        "Knowledge": "Potrafi grać w karty"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Shepherd"
+                        }
+                    ]
+                }
+            ]
+        },
+        "RSide": {},
+        "Preconditions": [
+            {"Count":"Pasture/Characters/Sheep", "Min": 3}
+        ],
+
+        "Instructions": [
+            {
+                "Op": "move",
+                "Nodes": "Shepherd",
+                "To": "Main_hero/Characters"
+            },
+            {
+                "Op": "move",
+                "Nodes": "Pasture/Characters/Sheep",
+                "To": "Main_hero/Characters",
+                "Limit": 3
+            }
+        ]
+    },
+    {
+        "Title": "Leaving Shepherd and his Sheep and getting money for help / Rozłączenie się z Pasterzem oraz jego owcami i otrzymanie pieniędzy za pomoc",
+        "TitleGeneric": "Deleting the group / Rozgrupowanie bohaterów",
+        "Description": "Bohater rozłącza się z pasterzem i owcami oraz otrzymuje 200 coinów za pomoc.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Name": "Shepherds_hideout",
+					"Attributes": {},
+                    "Characters": [
+						{
+                            "Name": "Main_hero",
+							"IsObject": true,
+                            "Attributes": {
+                                "Money": null
+                            },
+                            "Items": [],
+                            "Characters" : [
+                                {
+                                    "Name": "Shepherd",
+                                    "Attributes": {
+                                        "Money": null
+                                    },
+                                    "Items": []
+                                }
+                            ],
+                            "Narration": [
+                                {
+                                    "Name": "Help_with_sheep",
+                                    "Attributes": {
+                                        "Knowledge": "Pasterz potrzebuje pomocy przy pilnowaniu i odprowadzeniu owiec za 200 coinów"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "RSide": {},
+        "Instructions": [
+            {
+                "Op": "move",
+                "Nodes": "Main_hero/Characters/*",
+                "To": "Shepherds_hideout/Characters"
+            },
+            {
+                "Op": "set",
+                "Attribute": "Main_hero.Money",
+                "Expr": "Main_hero.Money + 200"
+            },
+            {
+                "Op": "set",
+                "Attribute": "Shepherd.Money",
+                "Expr": "Shepherd.Money - 200"
+            },
+            {
+                "Op": "delete",
+                "Nodes": "Help_with_sheep"
+            }
+        ]
+    },
+    {
+        "Title": "Finding out from Lumberjack that he needs help with bringing wood / Dowiedzenie się od drwala, że potrzebuje on pomocy z przyniesieniem drewna",
+        "TitleGeneric": "Knowledge creation / Utworzenie wiedzy fabularnej",
+        "Description": "Bohater dowiaduje się, że drwal potrzebuje pomocy przy przyniesieniu drewna i chętnie zapłaci za pomoc.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Id": "Somewhere",
+                    "Attributes": {},
+                    "Characters": [
+                        {
+                            "Name": "Lumberjack",
+                            "Attributes": {},
+                            "Characters": [],
+                            "Items": [],
+                            "Narration": [
+                                {
+                                    "Name": "Help_with_wood",
+                                    "Attributes": {
+                                        "Knowledge": "Drwal potrzebuje pomocy przy przyniesieniu drewna za 300 coinów"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Main_hero",
+							"IsObject": true,
+                            "Attributes": {},
+                            "Characters": [],
+                            "Items": []
+                        }
+                    ],
+                    "Items": [],
+                    "Connections": []
+                }
+            ]
+        },
+        "RSide": {},
+        "Preconditions": [],
+        "Instructions": [
+            {
+                "Op": "create",
+                "In": "Main_hero/Narration",
+                "Sheaf": {
+                    "Name": "Help_with_wood",
+                    "Attributes": {
+                        "Knowledge": "Drwal potrzebuje pomocy przy przyniesieniu drewna za 300 coinów"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "Title": "Getting an offer from traveler to teach how to play cards / Propozycja nauki gry w karty przez podróżnika",
+        "TitleGeneric": "Knowledge creation / Utworzenie wiedzy fabularnej",
+        "Description": "Podróżnik oferuje bohaterowi, że nauczy go grać w karty za 100 coinów.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Id": "Everywhere",
+                    "Attributes": {},
+                    "Characters": [
+                        {
+                            "Name": "Main_hero",
+                            "Attributes": {},
+                            "Characters": [],
+                            "Items": []
+                        },
+                        {
+                            "Name": "Traveler",
+                            "Attributes": {},
+                            "Characters": [],
+                            "IsObject": true,
+                            "Items": [],
+                            "Narration": [
+                                {
+                                    "Name": "Captain_lost_compass",
+                                    "Attributes": {
+                                        "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        }
+                    ],
+                    "Items": [],
+                    "Connections": []
+                }
+            ]
+        },
+        "RSide": {},
+        "Preconditions": [],
+        "Instructions": [
+            {
+                "Op": "create",
+                "In": "Main_hero/Narration",
+                "Sheaf": {
+                    "Name": "Playing_cards_quest",
+                    "Attributes": {
+                        "Knowledge": "Podróżnik nauczy grać w karty za 100 coinów."
+                    }
+                }
+            },
+            {
+                "Op": "create",
+                "In": "Main_hero/Narration",
+                "Sheaf": {
+                    "Name": "Captain_lost_compass",
+                    "Attributes": {
+                        "Knowledge": "Kapitan przegrał swój kompas podczas gry w karty"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "Title": "Paying Traveler to teach how to play cards / Płacenie podróżnikowi za nauczenie gry w karty",
+        "TitleGeneric": "Character’s feature change / Zmiana własności postaci",
+        "Description": "Bohater traci pieniądze, ale zyskuje umiejętność gry w karty.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Id": "Somewhere",
+                    "Attributes": {},
+                    "Characters": [
+                        {
+                            "Name": "Main_hero",
+							"IsObject": true,
+                            "Attributes": {
+                                "Money" : null
+                            },
+                            "Items": [],
+                            "Narration": [
+                                {
+                                    "Name": "Playing_cards_quest",
+                                    "Attributes": {
+                                        "Knowledge": "Podróżnik nauczy grać w karty za 100 coinów."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "Name": "Traveler",
+                            "Attributes": {
+                                "Money" : null
+                            },
+                            "Items": [],
+                            "Narration": [
+                                {
+                                    "Name": "Can_play_cards",
+                                    "Attributes": {
+                                        "Knowledge": "Potrafi grać w karty"
+                                    },
+                                    "Characters": [],
+                                    "Items": []
+                                }
+                            ]
+                        }
+                    ],
+                    "Items": [],
+                    "Connections": []
+                }
+            ]
+        },
+        "RSide": {},
+        "Preconditions": [
+            {
+                "Cond": "Main_hero.Money >= 100"
+            },
+            {"Count":"Main_hero/Narration/Can_play_cards", "Max": 0}
+        ],
+        "Instructions": [
+            {
+                "Op": "delete",
+                "Nodes": "Playing_cards_quest"
+            },
+            {
+                "Op": "create",
+                "In": "Main_hero/Narration",
+                "Sheaf": {
+                    "Name": "Can_play_cards",
+                    "Attributes": {
+                        "Knowledge": "Potrafi grać w karty"
+                    }
+                }
+            },
+            {
+                "Op": "set",
+                "Attribute": "Main_hero.Money",
+                "Expr": "Main_hero.Money - 100"
+            },
+            {
+                "Op": "set",
+                "Attribute": "Traveler.Money",
+                "Expr": "Traveler.Money + 100"
+            }
+        ]
+    },
+    {
+        "Title": "Paying tax / Płacenie podatku",
+        "TitleGeneric": "Character’s feature change / Zmiana własności postaci",
+        "Description": "Bohater płaci podatek.",
+        "Override": 0,
+        "LSide": {
+            "Locations": [
+                {
+                    "Id": "Somewhere",
+                    "Attributes": {},
+                    "Characters": [
+                        {
+                            "Name": "Main_hero",
+							"IsObject": true,
+                            "Attributes": {
+                                "Money" : null,
+                                "IsDebted": true
+                            },
+                            "Items": []
+                        },
+                        {
+                            "Name": "Lawyer",
+                            "Attributes": {
+                                "Money" : null
+                            },
+                            "Items": []
+                        }
+                    ],
+                    "Items": [],
+                    "Connections": []
+                }
+            ]
+        },
+        "RSide": {},
+        "Preconditions": [
+            {
+                "Cond": "Main_hero.Money >= 20"
+            }
+        ],
+        "Instructions": [
+            {
+                "Op": "set",
+                "Attribute": "Main_hero.IsDebted",
+                "Value": false
+            },
+            {
+                "Op": "set",
+                "Attribute": "Main_hero.Money",
+                "Expr": "Main_hero.Money - 20"
+            },
+            {
+                "Op": "set",
+                "Attribute": "Lawyer.Money",
+                "Expr": "Lawyer.Money + 20"
+            },
+            {
+                "Op": "delete",
+                "Nodes": "Main_hero/Narration/Pay_tax"
+            }
+        ]
+    }
+]

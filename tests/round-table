@@ -1,0 +1,52 @@
+digraph {
+	overlap=false
+	splines=true
+	V1 [label="Wizards hut" color="#00FF00" fillcolor="#ff0000" fontcolor="#0000FF" fontsize=20 shape=box style="filled,rounded"]
+	V2 [label=Elixir]
+	V3 [label=Wizard]
+	V4 [label="Dragon lair"]
+	V5 [label=Dragon]
+	V6 [label=Forest]
+	V7 [label=Road]
+	V8 [label=Lawyer]
+	V9 [label=Letter]
+	V10 [label="Main hero"]
+	V11 [label=Sword]
+	V12 [label=Goal]
+	V13 [label=Pasture]
+	V14 [label=Village]
+	V15 [label=Well]
+	V16 [label=Inn]
+	V17 [label=Table]
+	V18 [label=Chair]
+	V19 [label=Chest]
+	V20 [label=Map]
+	V21 [label=Innkeeper]
+	V22 [label=Poison]
+	V23 [label=Drunkard]
+	V24 [label=Alcohol]
+	V5 -> V4
+	V4 -> V6
+	V6 -> V7
+	V7 -> V1
+	V1 -> V2
+	V1 -> V3
+	V7 -> V8
+	V8 -> V9
+	V7 -> V10
+	V10 -> V12
+	V10 -> V11
+	V7 -> V13
+	V7 -> V14
+	V13 -> V14
+	V14 -> V15
+	V16 -> V7
+	V16 -> V17
+	V16 -> V19
+	V19 -> V20
+	V16 -> V23
+	V23 -> V24
+	V16 -> V21
+	V21 -> V22
+	V16 -> V18
+}
