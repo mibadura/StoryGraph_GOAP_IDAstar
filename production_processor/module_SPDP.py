@@ -3,13 +3,9 @@ import datetime
 import logging
 import sys
 import jsonpickle
-
-
 from copy import deepcopy
-
 from config.config import path_root
 from library.tools import *
-
 from library.tools_match import character_turn, world_turn, get_production_tree_new, what_to_do
 from library.tools_process import game_init, looking_for_main_character, game_over, save_world_game, \
     ids_list_update, get_quest_description
@@ -236,8 +232,8 @@ def player_move_storygraph(_character_paths, _gameplay, _world, _world_source, _
                             _next_variant_idx, todos
 
 
-def new_world_start(world_start_set, next_action = None, next_action_idx=None, next_variant = None,
-                    next_variant_idx=None, select_actions_by_ids = None, generate_files=None):
+def new_world_start(world_start_set, next_action=None, next_action_idx=None, next_variant=None,
+                    next_variant_idx=None, select_actions_by_ids=None, generate_files=None):
 
     world = world_start_set.world
     jsons_schema_OK = world_start_set.jsons_schema_OK
@@ -375,9 +371,9 @@ class NewWorldStartSet:
         self.variant_index = 0
 
     def calculate_total_stats(self):
-        weight_health = 2
-        weight_money = 1
-        weight_item_value = 1
+        weight_health = 2   # MODIFY
+        weight_money = 1    # MODIFY
+        weight_item_value = 1   # MODIFY
 
         item_values = 0
         main_hero = []
@@ -527,6 +523,7 @@ def main(_max_depth, _goal_value, _cost_of_action, _output_folder):
               f'actioncost{_cost_of_action}_{time.strftime("%Y%m%d%H%M%S")}.txt', 'w', encoding='utf-8') as f:
         sys.stdout = f
 
+        ### BEGINNING OF THE ORIGINAL STORYGRAPH SECTION ###
         logging.basicConfig(level=logging.ERROR, format='%(levelname)s: %(message)s', stream=sys.stdout)
 
         dir_name = ''
@@ -627,6 +624,9 @@ def main(_max_depth, _goal_value, _cost_of_action, _output_folder):
 
         character_paths = looking_for_main_character(gameplay, world, pointer=character,
                                                      zero_text="Zniknął główny bohater po ruchu NPC-a. Pewno zginął.")
+
+        ### END OF THE ORIGINAL STORYGRAPH SECTION ###
+
         main_location = character_paths[0][0]
         max_plan_loops = 40
         goal_reached = False
@@ -729,6 +729,5 @@ def main(_max_depth, _goal_value, _cost_of_action, _output_folder):
 
 
 if __name__ == "__main__":
-
     full_execution_time = main(_max_depth=9, _goal_value=3211, _cost_of_action=200, _output_folder='test_output_1')
     print(f'Program execution time: {round(full_execution_time, 3)}s')
