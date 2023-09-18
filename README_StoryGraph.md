@@ -1,47 +1,4 @@
-# System Procesu Decyzyjnego Postaci, SPDP, połączony z implementacją referencyjną systemu StoryGraph.
-Niniejszy projekt obejmuje modyfikację implementacji referencyjnej systemu StoryGraph, dalej określanej terminem IRSG,
-w celu umożliwienia automatycznego wyszukiwania optymalnych serii akcji prowadzących do celu w grze opartej na systemie
-StoryGraph.
-By umożliwić IRSG automatyczne znalezienie rozwiązań, skrypt `production_processor/application.py` zastąpiono *Systemem
-Procesu Decyzyjnego Postaci*, SPDP - skryptem `production_processor/module_SPDP.py`
-
-SPDP wykorzystuje technikę planowania działań ukierunkowanych na cel (z ang. goal-oriented action planning, GOAP)
-i iteracyjnie pogłębianego algorytmu A* (z ang. iterative-deepening A*, IDA*).
-
-Dzięki SPDP możliwe jest znalezienie i wykonanie serii akcji potrzebnej do zrealizowania ustalonego celu
-(wartości statystyk bohatera). Jeśli SPDP nie znajdzie kompletnej serii akcji, wybiera tą, która najbardziej przybliżyła
-postać do celu. Częściowy plan jest wykonywany, a przeszukiwanie jest ponawiane, tym razem z innego punktu startu.
-
-Moduł SPDP testowany był na przykładowej rozgrywce DragonStory.
-
-## Jak uruchomić SPDP?
-
-By uruchomić SPDP, należy podążać za oryginalną instrukcją StoryGraph dostępną poniżej.
-SPDP `production_processor/module_SPDP.py` zastąpił skrypt `production_processor/application.py` i jego wymagania są jednakowe.
-
-Przed uruchomieniem modułu SPDP, należy dodatkowo ustalić poniższe parametry:
-- Maksymalną głębokość przeszukiwania
-- Wartość statystyk, którą bohater ma osiągnąć
-- Rzeczywisty koszt wykonania pojedynczej akcji
-- Nazwę nowego lub istniejącego folderu w `GOAP_simulations/`, w którym zostanie zapisany wynik symulacji
-- Opcjonalnie zmodyfikowane mogą zostać wagi poszczególnych statystyk bohatera w metodzie `calculate_total_stats` klasy
-`NewWorldStartSet`, oznaczone komentarzem `# MODIFY`
-
-Wszystkie parametry poza wagami statyk ustawiane są jako argumenty funkcji `main` na końcu skryptu.
-Po ich modyfikacji wystarczy uruchomić skrypt. Poniżej znajduje się przykład ustawionych parametrów symulacji:
-```commandline
-if __name__ == "__main__":
-    full_execution_time = main(_max_depth=9, _goal_value=3211, _cost_of_action=200, _output_folder='test_output_1')
-    print(f'Program execution time: {round(full_execution_time, 3)}s')
-```
-SPDP tworzy plik tekstowy w folderze określonym w argumencie `_output_folder` funkcji `main`. To tam zapisywane są
-wykonywane przez SPDP akcje i obliczenia. Wynik nie jest wypisywany w konsoli ze względu na swój rozmiar — stworzony
-plik tekstowy może mieć setki MB.
-Na końcu pliku tekstowego możemy znaleźć opic akcji wykonanych przez skrypt po znalezieniu drogi do celu.
-## Poniżej znajduje się oryginalna wersja README dla Implementacji Referencyjnej systemu StoryGraph
-
----
-## Implementacja referencyjna systemu StoryGraph
+# Implementacja referencyjna systemu StoryGraph
 ![plot](./images/ikonaSG.png)
 <span style="color:red">**toryGraph**</span> to projekt modelu formalnego pozwalający zapisać strukturę narracyjną gry fabularnej w postaci modelu grafowego. Fabuła gry przedstawiona 
 jest w postaci grafu stanu świata i produkcji pozwalających go modyfikować. Produkcje dotyczące działań ogólnych 
@@ -52,7 +9,7 @@ przedmiotów („Items”) oraz informacji fabularnych („Narration”).
 
 Implementacja referencyjna demonstruje możliwości modelu i pozwala obejrzeć rozwiązania implementacyjne zalecane przez twórców systemu. Może też służyć jako silnik narracyjny dla zewnętrznych projektów dzięki udostępnionemu API.
 
-### Co da się zrobić w tym projekcie?
+## Co da się zrobić w tym projekcie?
 Zbiór skryptów w języku python dostępny w tym repozytorium pozwala na:
 - symulację rozgrywki: modyfikację wczytanego świata w trybie decyzji użytkownika: przeprowadzenie procesu decyzyjnego od początku do końca, 
 gry i wizualizację pośrednich stanów świata,
@@ -61,7 +18,7 @@ gry i wizualizację pośrednich stanów świata,
 - wygenerowanie poglądowych schematów produkcji (lokalnie lub poprzez API),
 - wygenerowanie schematu dziedziczenia produkcji.
 
-### Przykładowe uruchomienia
+## Przykładowe uruchomienia
 - Przejście misji DragonStory
   - uruchom skrypt `production_processor/application`. Przejdź misję zgodnie z którąś ścieżką ze schematu [examples/DragonStory/diagram_misji/quest_desing_diagram.png](https://github.com/iwonagg/StoryGraphPhD/blob/master/examples/DragonStory/diagram_misji/quest_desing_diagram_resize.png) lub zaproponuj własną ścieżkę. 
    
@@ -77,13 +34,13 @@ gry i wizualizację pośrednich stanów świata,
   `world_name = 'world_RumcajsStory'`, `quest_names = ['quest_RumcajsStory_close']`, `character_name = 'Rumcajs'`
   - uruchom skrypt `production_processor/application`. Przejdź misję zgodnie z którąś ścieżką ze schematu [examples/RumcajsStory/diagram_misji/Rumcajs_szczegółowy.png](https://github.com/iwonagg/StoryGraphPhD/blob/master/examples/RumcajsStory/diagram_misji/Rumcajs_szczegółowy_resize.png)
 
-### Specyfikacja
+## Specyfikacja
  - [Specyfikacja StoryGraph 1.2](Specyfikacja_StoryGraph_01.2_official.pdf)
  - [Dodatek A – Definicje modelu formalnego](Dodatek_A_do_specyfikacji_Definicje_modelu_grafowego.pdf)
  - [Dodatek B – JSON schema](./json_validation/json_schema/schemas/schema_updated_20220213.json)
 
 
-### Potrzebne dane źródłowe
+## Potrzebne dane źródłowe
 W katalogu materiałów projektowych (wskazanym w pliku `config.py`, domyślnie katalog `examples`);
 - co najmniej jeden plik `.json` misji, mogą być pogrupowane w podkatalogi. Zazwyczaj dla misji mamy dwa pliki, jeden zawierający produkcje generyczne a drugi szczegółowe;
 
@@ -125,15 +82,15 @@ W repozytorium skryptów:
 
 [comment]: <> (* lub inny w miarę potrzeb.)
 
-### Jak go uruchomić? 
+## Jak go uruchomić? 
 
-#### Wymagania
+### Wymagania
 - zainstalowany Python przynajmniej w wersji 3.8
 - PyCharm lub inne IDE
 - [GraphViz](https://graphviz.org/download/) w wersji przynajmniej 2.50
   - przy instalacji na windows wybierz "Add Graphviz to system PATH for all users" lub "Add Graphviz to system PATH for current users"
 
-#### Instalacja i przygotowanie projektu
+### Instalacja i przygotowanie projektu
 - pobierz projekt (`Git / Clone...`) z repozytorium GitHub (`https://github.com/iwonagg/StoryGraphPhD.git`)
 - stwórz wirtualne środowisko (venv)
   - szczegółowa instrukcja dla PyCharm:
@@ -151,7 +108,7 @@ W repozytorium skryptów:
   - `manual_word_modification/word_modification.py` – aby tworzyć lub modyfikować świat
 - obrazy generowane przez aplikację znajdziesz w katalogu `gameplays`
 
-#### Uwagi MAC
+### Uwagi MAC
 
 Przy instalacji pakietu `pygraphviz` może pojawić się błąd budowania biblioteki `graphviz`, który można rozwiązać poprzez:
 
@@ -163,7 +120,7 @@ pip install --global-option=build_ext --global-option="-I/opt/homebrew/include/"
 Efekty graficzne działania skryptów pojawiają się w katalogach wskazanych w poszczególnych skryptach. Jest to albo 
 katalog ze światami w katalogu źródłowym albo podkatalogi katalogu z repozytorium.
 
-### Dostępne skrypty
+## Dostępne skrypty
 - `api_examples`, `api_json_validation`, `api_visualise_production`
   - Azure Function do udostępniania schemat pliku `.json` poprzez RestAPI
   - Azure Function do walidowania plików produkcji i świata poprzez RestAPI
