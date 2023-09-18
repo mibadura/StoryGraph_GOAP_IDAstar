@@ -77,6 +77,9 @@ def plan_action_series(world_model_set, goal, heuristic, max_depth, _cost_of_act
                 print(f'best plan so far:')
                 for action in actions:
                     print(f'{action[0]["Title"]}')
+        elif goal_reached:
+            print(f'plan_action_series: goal smaller than the starting value. No need for searching')
+            return actions, goal_reached
 
     return actions, goal_reached
 
@@ -666,6 +669,8 @@ def main(_max_depth, _goal_value, _cost_of_action, _output_folder):
                 print("Final plan found.")
                 for action in list_actions:
                     print(f'Action #{action[1]} {action[0]["Title"]}, variant #{action[3]}')
+            elif not single_plan and goal_reached:
+                print("No need for searching, goal reached from the start.")
             else:
                 print('No plan for reaching the goal. Goal unreachable.')
                 goal_unreachable = True
@@ -687,13 +692,17 @@ def main(_max_depth, _goal_value, _cost_of_action, _output_folder):
             print(f'list_total_stats: {list_total_stats}')
             plan_loop_idx += 1
 
-        if goal_reached:
+        if goal_reached and list_actions:
             print(f'     ┌──────────────────────────────────────────────────────────────────────────────────────')
             print(f'     │  SUCCESS!!! We have found the FINAL PLAN! Executing it now 😍😍😍')
             print(f'     └──────────────────────────────────────────────────────────────────────────────────────')
-        elif list_actions:
+        elif not goal_reached and list_actions:
             print(f'     ┌──────────────────────────────────────────────────────────────────────────────────────')
             print(f'     │  Not quite... We have not found a way to reach the goal 😥 Here is the partial plan execution')
+            print(f'     └──────────────────────────────────────────────────────────────────────────────────────')
+        elif goal_reached and not list_actions:
+            print(f'     ┌──────────────────────────────────────────────────────────────────────────────────────')
+            print(f'     │  No need to search. The starting total_stats value is higher than your goal!         ')
             print(f'     └──────────────────────────────────────────────────────────────────────────────────────')
         else:
             print(f'     ┌──────────────────────────────────────────────────────────────────────────────────────')
@@ -729,5 +738,5 @@ def main(_max_depth, _goal_value, _cost_of_action, _output_folder):
 
 
 if __name__ == "__main__":
-    full_execution_time = main(_max_depth=9, _goal_value=3211, _cost_of_action=200, _output_folder='test_output_1')
+    full_execution_time = main(_max_depth=9, _goal_value=1000, _cost_of_action=200, _output_folder='test_output_1')
     print(f'Program execution time: {round(full_execution_time, 3)}s')
