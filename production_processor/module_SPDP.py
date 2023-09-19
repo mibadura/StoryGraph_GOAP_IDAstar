@@ -14,21 +14,47 @@ from library.tools_validation import get_jsons_storygraph_validated
 
 class Goal:
     def __init__(self, _minimum_total_stats):
+        """
+        :param _minimum_total_stats: Wartość statystyk którą bohater ma osiagnąć.
+        """
         self.minimum_total_stats = _minimum_total_stats
 
     def is_fulfilled(self, world_state):
+        """
+        Funkcja klasy Goal. Służy sprawdzeniu czy bohater osiągnął cel, zwiekszając wartość
+        swoich statystyk do docelowej wartości.
+
+        :param world_state: Opis stanu świata 'world' klasy NewWorldStartSet
+        :return: Zwraca True, jeśli wartość total_stats stanu świata jest równa lub wyższa ustalonej wartości docelowej
+        """
         return self.minimum_total_stats <= world_state.total_stats
 
 
 class Heuristic:
     def __init__(self, goal):
+        """
+        :param goal: Obiekt klasy Goal
+        """
         self.goal = goal
 
     def estimate(self, state):
+        """
+        Funkcja klasy Heuristic. Zwraca 'odległość bohatera od celu' - liczbę brakujących punktów statystyk.
+
+        :param state: Obiekt klasy NewWorldStartSet
+        :return: Zwraca różnicę wartości statystyk bohatera w danym stanie świata i docelowej wartości statystyk. Jeśli różnica jest mniejsza od 0, zwracane jest 0.
+        """
         return max(0, self.goal.minimum_total_stats-state.total_stats)
 
 
 def remove_top_level_connections(state_dict):
+    """
+    Funkcja służy usunięciu klucza Connections z informacji o lokacji zawartej w opisie stanu świata.
+    Connections zawiera informację o połączeniach między lokacjami w rozgrywce.
+
+    :param state_dict: Pojedyncza lokacja z listy lokacji będącej opisem stanu świata.
+    :return: Pojedyncza lokacja bez informacji o Connections.
+    """
     state_dict_copy = deepcopy(state_dict)
     if 'Connections' in state_dict_copy:
         del state_dict_copy['Connections']
@@ -40,11 +66,25 @@ class TranspositionTable:
         self.visited = {}
 
     def has(self, state, depth):
+        """
+        Funkcja klasy TranspositionTable. Sprawdza czy stan świata jest już zapisany w tabeli transpozycji z przypisaną
+        mniejszą lub równą głębokością niż podana.
+
+        :param state: Opis stanu świata 'world' klasy NewWorldStartSet
+        :param depth: Głębokość przeszukiwania
+        :return: Zwraca True jeśli stan świata znajduje się już w tabeli na tej lub niższej głębokości
+        """
         state_no_connections = [remove_top_level_connections(d) for d in state]
         state_pickle = jsonpickle.encode(state_no_connections)
         return state_pickle in self.visited and self.visited[state_pickle] <= depth
 
     def add(self, state, depth):
+        """
+        Funkcja klasy TranspositionTable. Dodaje stan świata do tabeli z przypisaną daną głębokością.
+
+        :param state: Opis stanu świata 'world' klasy NewWorldStartSet
+        :param depth: Głębokość przeszukiwania
+        """
         state_no_connections = [remove_top_level_connections(d) for d in state]
 
         state_pickle = jsonpickle.encode(state_no_connections)
@@ -54,6 +94,17 @@ class TranspositionTable:
 
 
 def plan_action_series(world_model_set, goal, heuristic, max_depth, _cost_of_action):
+    """
+    Funkcja służy znalezieniu częściowej lub pełnej serii akcji prowadzących bohatera do celu. Wywołuje funkcję
+    single_search zwiększając przy każdej iteracji wartości zmiennej `cutoff`.
+
+    :param world_model_set: Obiekt klasy NewWorldStartSet
+    :param goal: Obiekt klasy Goal
+    :param heuristic: Obiekt klasy Heuristic
+    :param max_depth: Maksymalna głębokość przeszukiwania
+    :param _cost_of_action: Rzeczywisty koszt pojedynczej akcji
+    :return: Zwraca listę akcji i True jeśli cel został osiągnięty
+    """
     cutoff = heuristic.estimate(world_model_set)
     goal_reached = False
     while cutoff != float('inf'):
@@ -85,6 +136,19 @@ def plan_action_series(world_model_set, goal, heuristic, max_depth, _cost_of_act
 
 
 def single_search(world_model, goal, heuristic, transposition_table, max_depth, cutoff, _cost_of_action):
+    """
+    Funkcja przeszukuje dostępne akcje. Przeszukiwanie jest ograniczone kosztem odcięcia - wartością `cutoff`,
+    która porównywana jest z sumą kosztu dotarcia do danego stanu świata i wyniku heurystyki dla stanu świata.
+
+    :param world_model: Obiekt klasy NewWorldStartSet. Opisuje startowy stan świata, z którego rozpoczyna się przeszukiwnanie
+    :param goal: Obiekt klasy Goal
+    :param heuristic: Obiekt klasy Heuristic
+    :param transposition_table: Obiekt klasy TranspositionTable
+    :param max_depth: Maksymalna głębokość przeszukiwania
+    :param cutoff: Koszt odcięcia
+    :param _cost_of_action: Rzeczywisty koszt pojedynczej akcji
+    :return: Zwraca nowy najmniejszy koszt odcięcia, listę akcji i informację czy cel został osiągnięty
+    """
     print(f'\n\tsingle_search: new single_search')
     max_depth += 1
 
@@ -738,5 +802,5 @@ def main(_max_depth, _goal_value, _cost_of_action, _output_folder):
 
 
 if __name__ == "__main__":
-    full_execution_time = main(_max_depth=9, _goal_value=1000, _cost_of_action=200, _output_folder='test_output_1')
+    full_execution_time = main(_max_depth=9, _goal_value=3000, _cost_of_action=200, _output_folder='test_output_1')
     print(f'Program execution time: {round(full_execution_time, 3)}s')
