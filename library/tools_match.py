@@ -1,7 +1,5 @@
 import datetime
 import inspect
-import re
-import time
 from copy import copy, deepcopy
 from itertools import product
 from typing import Union, Tuple, List
@@ -114,14 +112,10 @@ def neighbours_mismatch_removal(matches: list, ls_node_match: dict, w_node: dict
             elif neighbour!=ls_node_match and neighbour['ls_node'] in ls_nodes_with_ls_names[neighbour['ls_node'].get("Name")]:
 
                 intersection = []
-                # intersection = [nd for nd in neighbour['w_nodes_list'] if nd in w_nodes_with_ls_names[nd.get("Name")]]
                 for nd in neighbour['w_nodes_list']:
                     if nd.get("Name") in w_nodes_with_ls_names and nd in w_nodes_with_ls_names[nd.get("Name")]:
                         intersection.append(nd)
-                # if len(intersection) != len(neighbour['w_nodes_list']):
-                #     print (f"Mniej {neighbour['ls_node'].get('Name')}")
-                # else:
-                #     print(f"Tyle samo {neighbour['ls_node'].get('Name')}")
+
 
                 if single_match:
                     neighbour['w_nodes_list'] = intersection
@@ -227,16 +221,8 @@ def node_and_children_match(parent_ls: dict, parent_w: dict, character: Union[st
         # sprawdzam, czy w produkcji główny bohater jest jednoznacznie wskazany
         if parent_ls.get('Characters'):
             objects_indicated = [nd for nd in parent_ls.get('Characters') if nd.get('IsObject') == True]
-            # if len(objects_indicated) >= 1:
-            #     is_object_indicated = True
-            # elif len(objects_indicated) == 0:
-            #     is_object_indicated = False
-        # else:
-        #     print(f"Wskazanie podmiotu produkcji nie jest jednoznaczne!")
-        #     return False, []
 
     matches = []
-
 
     for layer in ['Characters', 'Items', 'Narration']:
         if layer not in parent_ls or len(parent_ls[layer]) == 0:
@@ -489,16 +475,6 @@ def find_matches_in_world(world: Union[list, dict], world_main_location:dict, pr
                 except:
                     pass
 
-    # wykluczanie z listy nieużywanych lokacji tych, które są już dopasowane jednoznacznie
-    # UWAGA: TO CHYBA NIE JEST POTRZEBNE, PONIEWAŻ NA RAZIE NIE ROZWIĄZALIŚMY ŻADNEJ LOKACJI POZA TYMI,
-    # KTÓRE SĄ POJEDYNCZE W ŚWIECIE I PRODUKCJI
-    # for location in matches:
-    #     if 'w_nodes_list' in location and len(location['w_nodes_list']) == 1:
-    #         try:
-    #             all_unused_locations.remove(location['w_nodes_list'][0])
-    #         except:
-    #             pass
-
     # uzupełnianie listy alternatyw dla lokacji, których nie dało się niczym ograniczyć
     for location in matches:
         if 'w_nodes_list' not in location or location['w_nodes_list'] == []:
@@ -514,12 +490,6 @@ def find_matches_in_world(world: Union[list, dict], world_main_location:dict, pr
         if 'w_nodes_list' in location and len(location['w_nodes_list']) > 1:
             for possible_node in location['w_nodes_list']:
                 neighbours_mismatch_removal(matches, location, possible_node, single_match=False)
-                # przykład, na którym sprawdzałam:
-                # 'Lokacja_A', [{'Destination': 'Lokacja_B'}]
-                # "Inn" [{'Destination': 'Road'}, {'Destination': 'Pasture'}]
-                # 'Lokacja_B', [{'Destination': 'Lokacja_A'}]
-                # "Pasture" [{'Destination': 'Road'}, {'Destination': 'Village'}]
-                # "Road" [{'Destination': 'Forest'}, {'Destination': 'Inn'}, {'Destination': 'Pasture'}, {'Destination': 'Village'}, {'Destination': 'Wizards_hut'}]
 
     # usuwanie węzłów, których atrybuty, liczba dzieci etc nie pasują.
     current_matches = []
@@ -567,11 +537,8 @@ def find_matches_in_world(world: Union[list, dict], world_main_location:dict, pr
 
     cartesian_product = product(*current_matches)
     list_from_cartesian_product = []
-    # for result in cartesian_product:
-    #     list_from_cartesian_product.append(list(result))
 
     for result in cartesian_product:
-        # list_from_cartesian_product.append(list(result))
         list_from_tuple = []
         for f in result:
             list_from_tuple.extend(f)
@@ -580,12 +547,9 @@ def find_matches_in_world(world: Union[list, dict], world_main_location:dict, pr
     list_from_cartesian_product_no_duplicates = []
     for package, nr in zip(list_from_cartesian_product, range(len(list_from_cartesian_product))):
         w_nodes_ids = []
-        # ls_nodes_ids = []
         for element in package:
-            # ls_nodes_ids.append(id(element[0]))
-            # print(f"{element[0].get('Id',element[0].get('Name'))}={str(id(element[1]))[-3:]}, ", end="")
+
             w_nodes_ids.append(id(element[1]))
-        # print(f"\n{nr:02d}: {len(set(w_nodes_ids)):02d}, {len(w_nodes_ids):02d}, {len(ls_nodes_ids)}, {len(set(ls_nodes_ids))}")
         if len(set(w_nodes_ids)) == len(w_nodes_ids):
             list_from_cartesian_product_no_duplicates.append(package)
 
@@ -609,7 +573,6 @@ def find_matches_in_world(world: Union[list, dict], world_main_location:dict, pr
                     print(n['Name'], end=', ')
         print()
 
-
     return True, list_from_cartesian_product_no_duplicates
 
 
@@ -620,7 +583,6 @@ def verify_matches_with_preconditions(prod, matches_to_verify_preconditions: lis
     ls_preconditions = prod.get('Preconditions')
     expressions_split = []
     matches_verified_with_preconditions =[]
-
 
     for package in matches_to_verify_preconditions:
         verification = True
@@ -661,22 +623,6 @@ def what_to_do(world: Union[list, dict], main_location: dict, production_list: l
     :return: True or False to indicate if production matching was possible and list of matched productions.
     """
 
-    # # sprawdzanie wstępnych warunków rozpoczęcia dopasowań i inicjacja
-    # if type(character) == str:
-    #     initial_paths = breadcrumb_pointer(world, name_or_id=character, layer='Characters')
-    #     if len(initial_paths) == 1:
-    #         world_main_location = initial_paths[0][-2]
-    #         character = initial_paths[0][-1]
-    #     else:
-    #         print(f"Wskazanie głównego bohatera „{character}” w świecie nie jest jednoznaczne!")
-    #         return False, []
-    # else:
-    #     initial_paths = breadcrumb_pointer(world, pointer=character, layer='Characters')
-    #     if len(initial_paths) == 1:
-    #         world_main_location = initial_paths[0][-2]
-    #     else:
-    #         print(f"Wskazanie głównego bohatera „{character['Name']}” w świecie nie jest jednoznaczne!")
-    #         return False, []
     if character:
         initial_paths = breadcrumb_pointer(world, pointer=character, layer='Characters')
         if len(initial_paths) == 1:
@@ -699,18 +645,7 @@ def what_to_do(world: Union[list, dict], main_location: dict, production_list: l
         if 'Comment' in prod and "Użyto „?”" in prod['Comment'] and not prod_vis_mode:
             continue
 
-        # szukanie dopasowań lewej strony produkcji do świata
-
-        # if prod["Title"] == "Teleportation / Teleportacja":
-        #     print("bez teleportacji")
-        #     continue
-        #
-        # start = time.perf_counter()
-        # # oper
-
         matches_OK, matches_to_verify_preconditions = find_matches_in_world(world, world_main_location, prod, test_mode, character=character)
-        # stop = time.perf_counter()
-        # print(f"{stop - start}")
 
         if not matches_OK:
             continue
@@ -728,13 +663,7 @@ def what_to_do(world: Union[list, dict], main_location: dict, production_list: l
             else:
                 matches_verified_with_preconditions = matches_to_verify_preconditions
         else:
-            # if prod.get('Preconditions'):
-            #     pass
-            #     compare_preconditions(prod, matches_to_verify_preconditions)
-            #     matches_verified_with_preconditions = matches_to_verify_preconditions
-            #     # sprawdzić, czy preconditions pasują i instrukcje pasują
-            # else:
-            #     # sprawdzić, czy instrukcje pasują
+
             matches_verified_with_preconditions = matches_to_verify_preconditions
         if not matches_OK:
             continue
@@ -759,8 +688,6 @@ def make_automatic_moves(gameplay, world, loc, productions_to_match, decision_nr
     else:
         if len(todos) == 0:
             return []
-        # else:
-        #     print(f'Z {len(productions_to_match)} produkcji udało się dopasować {len(todos)} w lokacji {loc.get("Name")}.')
 
     # generowanie podsumowania znalezionych dopasowań
     offset = 0
@@ -768,12 +695,6 @@ def make_automatic_moves(gameplay, world, loc, productions_to_match, decision_nr
         if len(todos) > nr - offset and productions_to_match[nr]['Title'] == todos[nr - offset]['Title']:
             warning_text = ''
             all_prod_number_text = f"{nr:02d}/" if test_mode else ''
-
-            # if len(prod_dict[productions_to_match[nr]['Title']]['children']) > 1:
-            #     for child in prod_dict[productions_to_match[nr]['Title']]['children']:
-            #         if prod_dict[child].get('Override') == 1:
-            #             warning_text = 'PRZYKRYTA '
-            #             break
 
             print(f"{all_prod_number_text}{nr - offset:02d}. {warning_text}{productions_to_match[nr]['Title'].split(' / ')[0]} – ", end="")
             print(f"{len(todos[nr - offset]['Matches'])} wariantów", end="")
@@ -795,7 +716,6 @@ def make_automatic_moves(gameplay, world, loc, productions_to_match, decision_nr
                 print(f"{nr:02d}/--. {productions_to_match[nr]['Title'].split(' / ')[0]} – ", end="")
                 print("nie pasuje")
             offset += 1
-
 
     # nie wybieramy produkcji, bierzemy pierwszą
     nr = 0
@@ -820,9 +740,6 @@ def make_automatic_moves(gameplay, world, loc, productions_to_match, decision_nr
             print(f"{variant_nr:02d}. ", end="")
             for pair in variant:
                 print(f'{pair[0].get("Id", pair[0].get("Name"))} = {pair[1].get("Id", pair[1].get("Name"))}, ', end='')
-            # if variant_nr < len(prod['Matches'])-1:
-            #     print('\n ', end='')
-            # else:
                 print()
         print("Wybieramy pierwszy wariant.")
 
@@ -837,10 +754,6 @@ def make_automatic_moves(gameplay, world, loc, productions_to_match, decision_nr
         d_desc = f'Dopasowanie produkcji automatycznej w świecie, wariant {chosen_variant:03d}'
         d_file = f'{decision_nr:03d}a_world_before_{prod["Title"].split(" / ")[0].replace("’", "")}'
         d_dir = f'{gameplay["FilePath"]}{os.sep}world_states{os.sep}'
-
-        # draw_graph(world, d_title, d_desc, d_file, d_dir, red_nodes, red_edges, comments)
-
-    # world_before = world_copy(world, deepcopy(world))
 
     # stosowanie produkcji
     red_nodes_new = apply_instructions_to_world(prod, variant, world)
@@ -860,13 +773,9 @@ def make_automatic_moves(gameplay, world, loc, productions_to_match, decision_nr
         d_desc = f'Stan świata po zastosowaniu produkcji w wariancie {chosen_variant:03d}'
         d_file = f'{decision_nr:03d}b_world_after_{prod["Title"].split(" / ")[0].replace("’", "")}'
 
-        # draw_graph(world, d_title, d_desc, d_file, d_dir, red_nodes, red_edges, comments)
-
         d_title = f'Świat w oczekiwaniu na ruch gracza'
         d_desc = f'Pomiędzy kolejnymi produkcjami'
         d_file = f'{decision_nr:03d}c_world_between_moves'
-
-        # draw_graph(world, d_title, d_desc, d_file, d_dir)
 
     world_after = world_copy(world, deepcopy(world))
 
@@ -997,196 +906,6 @@ def character_turn(gameplay, world, world_source, main_location, productions_to_
                    visualise = True, char_index = None, loc_index = None, npc = False,
                    next_action=None, next_action_idx=None, next_variant=None, next_variant_idx=None, todos=None, generate_files=None):
     test_mode = False
-    # if npc:
-    #     if loc_index is None:
-    #         loc_text =''
-    #     elif loc_index == 1:
-    #         loc_text = 'bieżącej'
-    #     elif type(loc_index) == int:
-    #         loc_text = f'{loc_index}.'
-    #     else:
-    #         loc_text = ''
-    #     if char_index is not None:
-    #         char_text = f'{char_index}. postać w {loc_text} lokacji – '
-    #     else:
-    #         char_text = f'postać w {loc_text} lokacji – '
-    # else:
-    #     char_text = ''
-    #
-    # print(f"\n#### Co może zrobić {char_text}{character.get('Name') if type(character) == dict else 'dowolna postać'}:")
-    #
-    # # znajdowanie dopasowań LS
-    # productions_matched, todos = what_to_do(world, main_location, productions_to_match, character=character)
-    # if not productions_matched:
-    #     print(f"Nie udało się dopasować produkcji do postaci {character} w świecie.")
-    #     return []
-    # else:
-    #     print(f"Z {len(productions_to_match)} produkcji udało się dopasować {len(todos)}. ")
-    #
-    #
-    # todos_names = [x["Title"] for x in todos]
-    #
-    # # generowanie podsumowania znalezionych dopasowań
-    # offset = 0
-    # for nr in range(len(productions_to_match)):  # [14:]
-    #     if len(todos) > nr - offset and productions_to_match[nr]['Title'] == todos[nr - offset]['Title']:
-    #         warning_text = ''  # TODO kiedyś będziemy ostrzegać, czy produkcja nie jest zablokowana przez szczegółową
-    #         all_prod_number_text = f"{nr:02d}/" if test_mode else ''
-    #         cover = ''
-    #         blockades2 = gameplay["ProductionHierarchy"][productions_to_match[nr]['Title']].get("children")
-    #         for ch in blockades2:
-    #             if ch in todos_names and gameplay["ProductionHierarchy"][ch]['prod']['Override'] == 2:
-    #                 cover = 'BLOKADA2 '
-    #         blockades1 = gameplay["ProductionHierarchy"][productions_to_match[nr]['Title']].get("blockades")
-    #
-    #
-    #         if productions_to_match[nr]['Title'] == "Teleportation / Teleportacja": # ta produkcja blokowana jest zawsze, więc nie musimy sprawdzać
-    #             cover = 'BLOKADA1 '
-    #         elif blockades1:
-    #             for b in blockades1:
-    #                 for v in todos[nr - offset]['Matches']:
-    #                     vb = 0
-    #                     for e1 in b:
-    #                         m = 0
-    #                         for e2 in v:
-    #                             if e1[0] == e2[0]:
-    #                                 if e1[1].get("Name"):
-    #                                     if e1[1].get("Name") == e2[1].get("Name"):
-    #                                         m += 1
-    #                                 if e1[1].get("Attributes") and e2[1].get("Attributes"):
-    #                                     if all(x in e2[1]["Attributes"].items() for x in e1[1]["Attributes"].items()):
-    #                                         m += 1
-    #                         if m >= len(b):
-    #                             v.append("BLOKADA1 ")
-    #                             vb += 1
-    #                 if vb == len(todos[nr - offset]['Matches']):
-    #                     cover = 'BLOKADA1 '
-    #                 elif vb:
-    #                     cover = 'CZĘŚCIOWA BLOKADA1 '
-    #         elif todos[nr - offset].get('TitleGeneric') and  todos[nr - offset].get('Override') == 2:
-    #             try:
-    #                 if todos[todos_names.index(todos[nr - offset]['TitleGeneric'])]['Matches'][0][-1] == "BLOKADA1 ":
-    #                     cover = 'BLOKADA1 '
-    #             except ValueError:
-    #                 pass
-    #
-    #
-    #
-    #         print(f"{all_prod_number_text}{nr - offset:02d}. {cover}{warning_text}{productions_to_match[nr]['Title'].split(' / ')[0]} – ", end="")
-    #         print(f"{len(todos[nr - offset]['Matches'])} wariantów", end="")
-    #         if test_mode:
-    #             print('(', end='')
-    #             used_nodes = {}
-    #             for node in todos[nr - offset]['Matches'][0]:
-    #                 used_nodes[node[0].get('Id', node[0].get('Name'))] = set()
-    #             for variant in todos[nr - offset]['Matches']:
-    #                 for node in variant:
-    #                     used_nodes[node[0].get('Id', node[0].get('Name'))].add(id(node[1]))
-    #             for node_name in used_nodes:
-    #                 print(f"{node_name}: {len(used_nodes[node_name])}", end=", ")
-    #             print(")")
-    #         else:
-    #             print()
-    #     else:
-    #         if test_mode:
-    #             print(f"{nr:02d}/--. {productions_to_match[nr]['Title'].split(' / ')[0]} – ", end="")
-    #             print("nie pasuje")
-    #         offset += 1
-    #
-    # # wybór produkcji
-    # print(f'\n0–{len(todos) - 1} – wybór produkcji, '
-    #       f'enter – opuszczenie kolejki, '
-    #       f'„end” – {"przerwij" if npc else "koniec symulacji"}, '
-    #       f'„save” – zapis świata')
-    # while True:  # pozyskujemy od użytkownika informację o wyborze produkcji
-    #     decision = input(f'Co robi {char_text}{character.get("Name") or ""}? ')
-    #
-    #     if decision.lower().strip() == 'end':
-    #         return "end"
-    #     if decision.lower().strip() == '':
-    #         return ""
-    #     if decision.lower().strip() == 'save':
-    #         save_world(world_source, f'{gameplay["FilePath"]}{os.sep}jsons')
-    #         print(f'Zapisano świat w katalogu: {gameplay["FilePath"]}{os.sep}jsons.')
-    #     if len(decision.split(",")) > 1:
-    #         decision_list = decision.split(",")
-    #         decision = decision_list.pop(0)
-    #     try:
-    #         chosen_production = int(decision)
-    #     except:
-    #         continue
-    #     if chosen_production in range(len(todos)):
-    #         break
-    #
-    # nr = chosen_production
-    # production = todos[nr]
-    #
-    # # generowanie podsumowania znalezionych wariantów wybranej produkcji
-    # print(f"\n#### Produkcja „{todos[nr]['Title'].split(' / ')[0]}” ma {len(todos[nr]['Matches'])} wariantów.\n", end='')
-    # print(f'#### Jeżeli chcesz poznać szczegóły wariantów, wygeneruj wizualizacje (katalog podany u góry).')
-    #
-    # if test_mode:
-    #     used_nodes = {}
-    #     for node in todos[nr]['Matches'][0]:
-    #         used_nodes[node[0].get('Id', node[0].get('Name'))] = set()
-    #     for variant in todos[nr]['Matches']:
-    #         for node in variant:
-    #             used_nodes[node[0].get('Id', node[0].get('Name'))].add(id(node[1]))
-    #     for node_name in used_nodes:
-    #         print(f"{node_name} – {len(used_nodes[node_name])}", end=", ")
-    #     print(' ')
-    #
-    # for variant, variant_nr in zip(production['Matches'], range(len(production['Matches']))):
-    #     print(f"{variant_nr:02d}. {variant[-1] if variant[-1] == 'BLOKADA1 ' else ''}", end="")
-    #     for pair in variant:
-    #         if type(pair) is not str:
-    #             print(f'{pair[0].get("Id", pair[0].get("Name"))} = {pair[1].get("Id", pair[1].get("Name"))}, ', end='')
-    #     # if variant_nr < len(production['Matches'])-1:
-    #     #     print('\n ', end='')
-    #     # else:
-    #     print()
-    #
-    # d_title = production["Title"]
-    # d_dir   = f'{gameplay["FilePath"]}/{decision_nr:03d}_{production["Title"].split(" / ")[0].replace("’", "")}'
-    #
-    #
-    # # potwierdzenie wyboru jedynej produkcji
-    # if len(todos[nr]["Matches"]) == 1:
-    #     while True:
-    #         print(f't – wykonanie produkcji, enter – opuszczenie kolejki, d – wizualizacja wariantów')
-    #         confirmation = input("Czy chcesz ją wykonać? ")
-    #         if confirmation.lower() in ['n', '']:
-    #             return ''
-    #         elif confirmation.lower() == 'd':
-    #             print("Może trochę potrwać...")
-    #             draw_variants_graphs(todos[nr]['Matches'], world, d_title, d_dir)
-    #         elif confirmation.lower() in ['t', '0']:
-    #             chosen_variant = 0
-    #             variant = todos[nr]['Matches'][chosen_variant]
-    #             break
-    # else:
-    #     # wybór wariantu produkcji
-    #     # back = False
-    #     print(f'\n0–{len(todos[nr]["Matches"]) - 1} – wybór wariantu, '
-    #           f'enter – opuszczenie kolejki, '
-    #           f'd – wizualizacja wariantów')
-    #     while True:  # pozyskujemy od użytkownika informację o wyborze wariantu produkcji
-    #         decision = input(f'Co konkretnie robi {character.get("Name", "")} w produkcji? ')
-    #         if decision.lower() == '':
-    #             return ''
-    #         if decision.lower() == 'd':
-    #             print("Może trochę potrwać...")
-    #             draw_variants_graphs(todos[nr]['Matches'], world, d_title, d_dir)
-    #         try:
-    #             chosen_variant = int(decision)
-    #         except:
-    #             continue
-    #         if chosen_variant in range(len(todos[nr]["Matches"])):
-    #             break
-    #     # if back:
-    #     #     pass
-    #
-    # variant = todos[nr]['Matches'][chosen_variant]
     production = next_action
     variant = next_variant
 
@@ -1207,8 +926,6 @@ def apply_chosen_actions_mb(visualise, variant, production, chosen_variant, char
 
         if generate_files:
             draw_graph(world, d_title, d_desc, d_file, d_dir, red_nodes, red_edges, comments)
-
-    # world_before = world_copy(world, deepcopy(world))
 
     # stosowanie produkcji
     red_nodes_new = apply_instructions_to_world(production, variant, world)
@@ -1259,7 +976,6 @@ def compare_preconditions(parent, child, variant: List[Tuple[dict, dict]]):
             return len(t[0].get("Id",t[0].get("Name")))
 
     if "Preconditions" in parent and "Preconditions" in child:
-        # precs_p = parent["Preconditions"]
 
         variant.sort(key=tulpe_first_order)
         for p in parent["Preconditions"]:
@@ -1300,54 +1016,7 @@ def compare_instructions(parent, child, variant: List[Tuple[dict, dict]]) -> boo
             if "?" not in str(instr_p) and instr_p not in child["Instructions"]:
                 # print("ni ma!")
                 return False
-            # elif "?" in str(instr_p):
-            #
-            #     joint_instr = "".join(f'{child["Instructions"]}')
-            #     print(joint_instr)
-            #     for s in f'{instr_p}'.split("?"):
-            #         print(s)
-            #         if s not in joint_instr:
-            #             print("ni ma!?")
-            #             return False
-            #
 
-
-                # instr_seek = False
-                # for instr_ch in child["Instructions"]:
-                #     qm_seek = True
-                #     for s in str(instr_p).split("?"):
-                #         if s not in str(instr_ch):
-                #             qm_seek = False
-                #     if qm_seek:
-                #         instr_seek = True
-                # if not instr_seek:
-                #     print("ni ma?!")
-                #     return False
-
-
-
-
-                #     for k, v in instr_p.items():
-                #         if k not in instr_ch:
-                #             break
-                #         elif k == "Nodes" and v != "?" and v != instr_ch[k]:
-                #             break
-                #         elif k == "Attribute" and v[-2:] != ".?" and v != instr_ch[k]:
-                #             break
-                #         elif k == "Attribute" and v[-2:] == ".?" and v[0,-3] != instr_ch[k][0:-3]:
-                #             break
-                #         else:
-                #             seek_ch = True
-                #     if seek_ch:
-                #         break
-                # if not seek_ch:
-                #     print("ni ma!")
-                #     return False
-
-
-
-            # for instr_ch in parent["Instructions"]:
-            #     if print(f'Porównanie tupli do: {instr_ch}')
         return True
     elif "Instructions" in parent and not "Instructions" in child:
         return False
@@ -1385,21 +1054,16 @@ def check_hierarchy(parent, child, character = None) -> Tuple[str, list]:
         productions_matched, todos = what_to_do(world, main_location, [parent], character=character,
                                                 prod_vis_mode=True)
 
-        # print(f"{parent['Title'].split(' / ')[0]} -> {child['Title'].split(' / ')[0]}")
         if not productions_matched:
             ch = character.get("Id", character.get("Name", ""))             # f'postaci {ch}' if character_paths else
-            # print(f"Nie udało się dopasować produkcji do { 'żadnej postaci'} w świecie.")
             return 'compare failed', []
         else:
             pass
-            # print(                                 # len(character_paths) if character_paths else
-            #     f"Z {len([parent])} produkcji dla {'wszystkich'} postaci udało się dopasować {len(todos)}. ")
+
             for element in todos:
                 for e in element["Matches"]:
                     for f in e:
                         pass
-                        # print(f'{f[0].get("Id", f[0].get("Name"))}, {f[1].get("Id", f[1].get("Name"))}')
-                        # # print(f'aaaa   {str(f)[0:100]}')
 
             if len(todos):
                 LS_OK = True
@@ -1452,8 +1116,7 @@ def get_production_tree_new(*json_sources):
         for production in json_given["json"]:
             if production["Title"] in production_dict:
                 if production == production_dict[production["Title"]]["prod"]:
-                    # print(f"Dwie identyczne (więc nic groźnego) produkcje o tej samej nazwie: „{production['Title']}” "
-                    #     f"w plikach „{production_dict[production['Title']]['file_path']}” i „{json_given['file_path']}”.")
+
                     pass
                 else:
                     print(f"Dwie różne produkcje o tej samej nazwie: „{production['Title']}” "
@@ -1488,6 +1151,5 @@ def get_production_tree_new(*json_sources):
             production_dict[v["parent"]]["blockades"].extend(blockades)
             if hierarchy_res != 'OK':
                 v["hierarchy_mismatch"] = hierarchy_res
-
 
     return production_dict, root_generics, root_missing
