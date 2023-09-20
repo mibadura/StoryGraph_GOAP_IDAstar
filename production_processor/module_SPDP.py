@@ -149,6 +149,7 @@ def single_search(world_model, goal, heuristic, transposition_table, max_depth, 
     :param _cost_of_action: Rzeczywisty koszt pojedynczej akcji
     :return: Zwraca nowy najmniejszy koszt odcięcia, listę akcji i informację czy cel został osiągnięty
     """
+
     print(f'\n\tsingle_search: new single_search')
     max_depth += 1
 
@@ -160,7 +161,7 @@ def single_search(world_model, goal, heuristic, transposition_table, max_depth, 
     states[0] = world_model
     current_depth = 0
     print(f'\tsingle_search: starting worldModel: {states[0]}')
-    transposition_table.add(states[current_depth].world, current_depth) # MB CHANGE TRANSPO
+    transposition_table.add(states[current_depth].world, current_depth)
 
     smallest_cutoff = float('inf')
 
@@ -264,6 +265,20 @@ def player_move_storygraph(_character_paths, _gameplay, _world, _world_source, _
                            _world_nodes_ids_list, _world_nodes_ids_pairs_list, _world_locations_ids,
                            _productions_world_turn_to_match, _next_action, _next_action_idx, _next_variant,
                            _next_variant_idx, todos, generate_files=None):
+    """
+    Funkcja zastępująca część skryptu `application.py` która powtarzana jest w nieskończonej pętli, dając bohaterowi
+    możliwość wykonania wybranej akcji. Aplikuje wybraną akcję do danego stanu świata
+
+    Jako argumenty przyjmuje wszystkie parametry potrzebne funkcji `character_turn` w wykorzystanej wersji IRSG
+
+    :param _next_action: Opis akcji do zastosowania
+    :param _next_action_idx: ID akcji do zastosowania
+    :param _next_variant: Opis wariantu akcji do zastosowania
+    :param _next_variant_idx: ID wariantu akcji do zastosowania
+    :param todos: Lista wszystkich dostępnych akcji i ich wariantów
+    :param generate_files: Parametr Boolean decydujący o tworzeniu podsumowania rozgrywki w folderze `gameplays`
+    :return: Zwraca wszystkie argumenty potrzebne funkcji `character_turn`, zmodyfikowane po wykonaniu akcji
+    """
     if len(_character_paths[0]) == 2:
         _effect_main = character_turn(_gameplay, _world, _world_source, _main_location,
                                       _productions_chars_turn_to_match,_decision_nr, character=_character,
@@ -301,7 +316,20 @@ def player_move_storygraph(_character_paths, _gameplay, _world, _world_source, _
 
 def new_world_start(world_start_set, next_action=None, next_action_idx=None, next_variant=None,
                     next_variant_idx=None, select_actions_by_ids=None, generate_files=None):
+    """
+    Funkcja przyjmuje opis stanu świata, obiekt typu NewWorldStartSet i stosuje do niego podaną akcję, stosując funkcję
+    `player_move_storygraph`. Zanim do obiektu NewWorldStartSet zastosowana zostanie akcja, stan świata musi zostać
+    przygotowany, co ta funkcja umożliwia.
 
+    :param world_start_set: Obiekt typu NewWorldStartSet
+    :param next_action: Opis akcji do zastosowania
+    :param next_action_idx: ID akcji do zastosowania
+    :param next_variant: Opis wariantu akcji do zastosowania
+    :param next_variant_idx: ID wariantu akcji do zastosowania
+    :param select_actions_by_ids: Parametr Boolean określający czy akcja powinna zostać wybrana na podstawie opisu czy ID
+    :param generate_files: Parametr Boolean decydujący o tworzeniu podsumowania rozgrywki w folderze `gameplays`
+    :return: Zwraca obiekt typu NewWorldStartSet, zmodyfikowany przez zastosowanie akcji
+    """
     world = world_start_set.world
     jsons_schema_OK = world_start_set.jsons_schema_OK
     quest_names = world_start_set.quest_names
@@ -378,7 +406,7 @@ def new_world_start(world_start_set, next_action=None, next_action_idx=None, nex
     character_paths = looking_for_main_character(gameplay, world, pointer=character,
                                                  zero_text="Zniknął główny bohater po ruchu NPC-a. Pewno zginął.")
     main_location = character_paths[0][0]
-    # skip = False
+
     sheaf_description(main_location)
 
     if (not next_action) and  (not next_variant):
@@ -404,9 +432,15 @@ def new_world_start(world_start_set, next_action=None, next_action_idx=None, nex
 
 
 def find_main_hero(d):
+    """
+    Funkcja służy znalezieniu aktualnego opisu bohatera w pojedynczej lokacji
+
+    :param d: Pojedyncza lokacja zawarta w opisie stanu świata `world`
+    :return: Zwraca opis bohatera zawarty w podanej lokacji
+    """
+
     results = []
 
-    # Check if the dictionary contains the 'Characters' key
     if 'Characters' in d:
         for character in d['Characters']:
             if character['Name'] == 'Main_hero':
@@ -438,6 +472,12 @@ class NewWorldStartSet:
         self.variant_index = 0
 
     def calculate_total_stats(self):
+        """
+        Metoda klasy NewWorldStartSet. Oblicza wartość statystyk bohatera z uwzględnieniem wag.
+
+        :return: Zwraca sumę punktów HP, pieniędzy i wartości przedmiotów bohatera, pomnożonych przez wagi.
+        """
+
         weight_health = 2   # MODIFY
         weight_money = 1    # MODIFY
         weight_item_value = 1   # MODIFY
@@ -464,22 +504,13 @@ class NewWorldStartSet:
                weight_money*money_values + \
                weight_item_value*item_values
 
-    def copy(self):
-        return NewWorldStartSet(
-            deepcopy(self.world),
-            deepcopy(self.jsons_schema_OK),
-            deepcopy(self.quest_names),
-            deepcopy(self.character_name),
-            deepcopy(self.world_name),
-            deepcopy(self.world_source),
-            deepcopy(self.character),
-            deepcopy(self.gameplay),
-            deepcopy(self.main_location),
-            deepcopy(self.productions_chars_turn_to_match),
-            deepcopy(self.decision_nr)
-        )
-
     def next_action(self):
+        """
+        Metoda klasy NewWorldStartSet. Przy każdym wywołaniu zwraca kolejną akcję lub kolejny dostępny wariant w obrębie
+        jednej akcji, dostępny dla danego stanu świata. Jeśli nie ma już niewykorzystanych akcji i ich wariantów, zwracane jest None
+
+        :return: Opis akcji, ID akcji, opis wariantu, ID wariantu
+        """
         if self.action_index < len(self.actions):
             next_action = self.actions[self.action_index]
             next_variant = next_action['Matches'][self.variant_index]
@@ -496,15 +527,13 @@ class NewWorldStartSet:
         else:
             return None, None, None, None
 
-    def __hash__(self):
-        return hash(frozenset(self.world))
-
-    def __eq__(self, other):
-        if isinstance(other, NewWorldStartSet):
-            return (self.world == other.world)
-        return False
-
     def get_available_actions(self):
+        """
+        Metoda klasy NewWorldStartSet. Zwraca wszystkie akcje i warianty dostępne dla stanu świata, po odfiltrowaniu
+        niektórych akcji. Odfiltrowane zostają akcje zawierające frazy `teleport`, `character’s death` i `deleting`
+
+        :return: Zwraca listę akcji dostępnych dla stanu świata
+        """
         world_nodes_list = nodes_list_from_tree(self.world, "Locations")
         world_nodes_dict = {}
 
@@ -578,6 +607,21 @@ class NewWorldStartSet:
 
 
 def main(_max_depth, _goal_value, _cost_of_action, _output_folder):
+    """
+    Podstawowa funkcja modułu SPDP. Wczytuje z pliku opis startowego stanu świata. Inicjalizuje go i przechodzi do pętli,
+    wykonywanej dopóki ustalony cel nie zostanie osiągnięty lub okaże się nieosiągalny, wywołując funkcję `plan_action_series`.
+    Jeśli funkcja `plan_action_series` nie osiągnie celu ale znajdzie serię akcji która przybliża do niego bohatera,
+    seria akcji jest wykonywana a przeszukiwanie kontynuowane z nowego punktu startowego.
+    Jeśli zostanie znaleziona jakakolwiek seria akcji, pojedyncza lub złożona z krótszych serii, jest ona wykonywana w
+    końcowej części funkcji na niezmodyfikowanym świecie wczytanym z pliku.
+
+    :param _max_depth: Maksymalna głębokość przeszukiwania
+    :param _goal_value: Docelowa wartość statystyk bohatera
+    :param _cost_of_action: Rzeczywisty koszt wykonania pojedynczej akcji
+    :param _output_folder: Nazwa folderu, w którym zostanie zapisane podsumowanie przeszukiwania
+
+    :return: Zwraca czas pracy programu
+    """
     main_start_time = time.time()
 
     all_outputs_folder = 'GOAP_simulations'
