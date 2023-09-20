@@ -1,0 +1,2632 @@
+
+        ╔═══════════════════════════════════════════════════════════════════════════════════════════
+        ║ S Y M U L A T O R    P R O C E S U    D E C Y Z Y J N E G O    G R A C Z A    R P G
+        ║
+        ║ Proces decyzyjny fabuły zdefiniowanej w świecie: world_DragonStory
+        ║ poprzez produkcje generyczne i misję: quest_DragonStory
+        ║ dla bohatera: Main_hero.
+        ║ Wizualizacje kolejnych możliwości wyboru i wykonanych produkcji znajdują się w katalogu: 
+        ║ C:\MyStuff\UJ\Magisterka\StoryGraph_GOAP_IDAstar/gameplays/gp-20230920231022
+        ║
+        ║ UWAGA1: Aplikacja działa w trybie testera, czyli można wykonywać produkcje przesłonięte 
+        ║ parametrem Override mimo ich oznaczenia: BLOKADA1, BLOKADA2. 
+        ║ UWAGA2: Działa dość wolno, bo generuje mnóstwo obrazków pomocniczych.
+        ╚═══════════════════════════════════════════════════════════════════════════════════════════
+        
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Jesteś głównym bohaterem gry (Main_hero). Twoim celem w tej misji jest zdobycie 
+     │ smoczego jaja pilnowanego przez groźnego smoka. Smoka możesz zabić w walce (pod 
+     │ warunkiem, że uzyskasz odpowiednio dużo siły), otruć lub wypłoszyć z legowiska. 
+     │ Siłę zwiększamy jedząc obiekty o dużej wartości odżywczej, truciznę dostaniemy 
+     │ od przyjaciół lub pozyskamy z trujących roślin.
+     └──────────────────────────────────────────────────────────────────────────────────────
+	main: goal minimum stats = 3000
+
+ -------------------- plan_action_series: new plan action series - cutoff: 1790 -------------------- 
+
+
+	single_search: new single_search
+	single_search: starting worldModel: <__main__.NewWorldStartSet object at 0x00000294741FF1C0>
+		transpo:	adding state at depth: 0
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: heuristic_estimate 1790 lower than best_cost inf
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Wizards_hut).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (1990.0 > 1790)
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Forest).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #1
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (1990.0 > 1790)
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 2
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Pasture).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #2
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (1990.0 > 1790)
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 3
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Village).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #3
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (1990.0 > 1790)
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 4
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Inn).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #4
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (1990.0 > 1790)
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: action Dropping item / Odłożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Sword) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #1 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 210;	cost 2990.0;	cutoff: 1790
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (2990.0 > 1790)
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1790
+	single_search: total stats 1210
+	single_search: no more actions: depth decreased
+
+ -------------------- plan_action_series: new plan action series - cutoff: 1990.0 -------------------- 
+
+
+	single_search: new single_search
+	single_search: starting worldModel: <__main__.NewWorldStartSet object at 0x0000029473F6AF50>
+		transpo:	adding state at depth: 0
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: heuristic_estimate 1790 lower than best_cost inf
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Wizards_hut).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #0 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | already in transpo. trying next move 
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Wizard) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Road), gubiąc wszystkie swoje 
+     │ przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Wizard), który ucieka do sąsiedniej lokacji (Road), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #1
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Picking item up / Podniesienie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Podniesienie przedmiotu. Main_hero podnosi przedmiot (Elixir) leżący w lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #2 and variant #0
+
+	single_search: simulating move 1210 -> 1220 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1220;	cost 2180.0;	cutoff: 1990.0
+	single_search: total stats 1220
+	single_search: cost bigger than cutoff (2180.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Dropping item / Odłożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Sword) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #3 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Putting item in / Włożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu. Main_hero wkłada przedmiot (Sword) do innego przedmiotu 
+     │ (Elixir).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #4 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Overwhelming character / Przejęcie kontroli nad postacią variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie kontroli nad postacią. Stworzenie grupy z dwóch bohaterów: Main_hero 
+     │ przejmuje kontrolę nad inną postacią (Wizard).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #5 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Item acquisition from another character / Przejęcie przedmiotu od innej postaci variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie przedmiotu od innej postaci. Main_hero oddaje drugiemu bohaterowi 
+     │ (Wizard) przedmiot (Sword).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #6 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: no more actions: depth decreased
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Forest).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #1
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Forest nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Herbs {'Value': 30, 'IsPoison': True}
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #0 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | already in transpo. trying next move 
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Forest nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Herbs {'Value': 30, 'IsPoison': True}
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Dragons_lair).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #0 and variant #1
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Picking item up / Podniesienie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Forest nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Herbs {'Value': 30, 'IsPoison': True}
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Podniesienie przedmiotu. Main_hero podnosi przedmiot (Herbs) leżący w lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #0
+
+	single_search: simulating move 1210 -> 1240 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1240;	cost 2160.0;	cutoff: 1990.0
+	single_search: total stats 1240
+	single_search: cost bigger than cutoff (2160.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Dropping item / Odłożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Forest nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Herbs {'Value': 30, 'IsPoison': True}
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Sword) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #2 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Putting item in / Włożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Forest nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Herbs {'Value': 30, 'IsPoison': True}
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu. Main_hero wkłada przedmiot (Sword) do innego przedmiotu 
+     │ (Herbs).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #3 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: no more actions: depth decreased
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 2
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Pasture).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #2
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Pasture nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Sheep {'HP': 10, 'NutritionalValue': 20}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #0 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | already in transpo. trying next move 
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Pasture nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Sheep {'HP': 10, 'NutritionalValue': 20}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Village).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #0 and variant #1
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Pasture nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Sheep {'HP': 10, 'NutritionalValue': 20}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Sheep) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Road), gubiąc wszystkie swoje 
+     │ przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Pasture nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Sheep {'HP': 10, 'NutritionalValue': 20}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Sheep) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Village), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #1
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 2
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Pasture nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Sheep {'HP': 10, 'NutritionalValue': 20}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Sheep), który ucieka do sąsiedniej lokacji (Road), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #2
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 3
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Pasture nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Sheep {'HP': 10, 'NutritionalValue': 20}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Sheep), który ucieka do sąsiedniej lokacji (Village), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #3
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Dropping item / Odłożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Pasture nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Sheep {'HP': 10, 'NutritionalValue': 20}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Sword) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #2 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Overwhelming character / Przejęcie kontroli nad postacią variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Pasture nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Sheep {'HP': 10, 'NutritionalValue': 20}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie kontroli nad postacią. Stworzenie grupy z dwóch bohaterów: Main_hero 
+     │ przejmuje kontrolę nad inną postacią (Sheep).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #3 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Item acquisition from another character / Przejęcie przedmiotu od innej postaci variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Pasture nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Sheep {'HP': 10, 'NutritionalValue': 20}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie przedmiotu od innej postaci. Main_hero oddaje drugiemu bohaterowi 
+     │ (Sheep) przedmiot (Sword).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #4 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: no more actions: depth decreased
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 3
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Village).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #3
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Village nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Well 
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #0 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | already in transpo. trying next move 
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Village nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Well 
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Pasture).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #0 and variant #1
+
+	single_search: simulating move 1210 -> 1210 | already in transpo. trying next move 
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Picking item up / Podniesienie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Village nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Well 
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Podniesienie przedmiotu. Main_hero podnosi przedmiot (Well) leżący w lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Dropping item / Odłożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Village nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Well 
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Sword) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #2 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Putting item in / Włożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Village nie ma żadnych własności.
+     │ Znajduje się w niej: 
+     │ ❑ Well 
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu. Main_hero wkłada przedmiot (Sword) do innego przedmiotu 
+     │ (Well).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #3 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: no more actions: depth decreased
+	single_search:	depth: 0;	state total_stats 1210;	cost 1790.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 4
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Inn).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 0 | assigned action #0 and variant #4
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 1
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #0 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | already in transpo. trying next move 
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Location change / Zmiana lokacji variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Pasture).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #0 and variant #1
+
+	single_search: simulating move 1210 -> 1210 | already in transpo. trying next move 
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Innkeeper) atakuje 
+     │ drugiego (Main_hero), który ucieka do sąsiedniej lokacji (Road), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Innkeeper) atakuje 
+     │ drugiego (Main_hero), który ucieka do sąsiedniej lokacji (Pasture), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #1
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 2
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Drunkard) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Road), gubiąc wszystkie swoje 
+     │ przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #2
+
+	single_search: simulating move 1210 -> 210 | already in transpo. trying next move 
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 3
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Drunkard) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Pasture), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #3
+
+	single_search: simulating move 1210 -> 210 | already in transpo. trying next move 
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 4
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Innkeeper), który ucieka do sąsiedniej lokacji (Road), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #4
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 5
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Innkeeper), który ucieka do sąsiedniej lokacji (Pasture), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #5
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 6
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Drunkard), który ucieka do sąsiedniej lokacji (Road), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #6
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 7
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Drunkard), który ucieka do sąsiedniej lokacji (Pasture), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #1 and variant #7
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Dropping item / Odłożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Sword) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #2 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Overwhelming character / Przejęcie kontroli nad postacią variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie kontroli nad postacią. Stworzenie grupy z dwóch bohaterów: Main_hero 
+     │ przejmuje kontrolę nad inną postacią (Innkeeper).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #3 and variant #0
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Overwhelming character / Przejęcie kontroli nad postacią variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie kontroli nad postacią. Stworzenie grupy z dwóch bohaterów: Main_hero 
+     │ przejmuje kontrolę nad inną postacią (Drunkard).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #3 and variant #1
+
+	single_search: simulating move 1210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 1210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Item acquisition from another character / Przejęcie przedmiotu od innej postaci variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie przedmiotu od innej postaci. Main_hero oddaje drugiemu bohaterowi 
+     │ (Innkeeper) przedmiot (Sword).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #4 and variant #0
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Item acquisition from another character / Przejęcie przedmiotu od innej postaci variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie przedmiotu od innej postaci. Main_hero oddaje drugiemu bohaterowi 
+     │ (Drunkard) przedmiot (Sword).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #4 and variant #1
+
+	single_search: simulating move 1210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 1;	state total_stats 1210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: action Item acquisition from another character / Przejęcie przedmiotu od innej postaci variant 2
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie przedmiotu od innej postaci. Innkeeper oddaje drugiemu bohaterowi 
+     │ (Main_hero) przedmiot (Poison).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 1 | assigned action #4 and variant #2
+
+	single_search: simulating move 1210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 2
+	single_search:	depth: 2;	state total_stats 2210;	cost 1190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: heuristic_estimate 790 lower than best_cost 1790
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 2 | assigned action #0 and variant #0
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 3
+	single_search:	depth: 3;	state total_stats 2210;	cost 1390.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Wizards_hut).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 3 | assigned action #0 and variant #0
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 4
+	single_search:	depth: 4;	state total_stats 2210;	cost 1590.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 4 | assigned action #0 and variant #0
+
+	single_search: simulating move 2210 -> 2210 | already in transpo. trying next move 
+	single_search:	depth: 4;	state total_stats 2210;	cost 1590.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Wizard) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Road), gubiąc wszystkie swoje 
+     │ przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 4 | assigned action #1 and variant #0
+
+	single_search: simulating move 2210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 5
+	single_search:	depth: 5;	state total_stats 210;	cost 3790.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (3790.0 > 1990.0)
+	single_search:	depth: 4;	state total_stats 2210;	cost 1590.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Wizard), który ucieka do sąsiedniej lokacji (Road), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 4 | assigned action #1 and variant #1
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 5
+	single_search:	depth: 5;	state total_stats 2210;	cost 1790.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 5 | assigned action #0 and variant #0
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 6
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Wizards_hut).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #0 and variant #0
+
+	single_search: simulating move 2210 -> 2210 | already in transpo. trying next move 
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Location change / Zmiana lokacji variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Forest).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #0 and variant #1
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Location change / Zmiana lokacji variant 2
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Pasture).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #0 and variant #2
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Location change / Zmiana lokacji variant 3
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Village).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #0 and variant #3
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Location change / Zmiana lokacji variant 4
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Inn).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #0 and variant #4
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Wizard) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Wizards_hut), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #0
+
+	single_search: simulating move 2210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 210;	cost 4190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (4190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Wizard) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Forest), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #1
+
+	single_search: simulating move 2210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 210;	cost 4190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (4190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 2
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Wizard) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Pasture), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #2
+
+	single_search: simulating move 2210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 210;	cost 4190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (4190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 3
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Wizard) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Village), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #3
+
+	single_search: simulating move 2210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 210;	cost 4190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (4190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 4
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Wizard) atakuje drugiego 
+     │ (Main_hero), który ucieka do sąsiedniej lokacji (Inn), gubiąc wszystkie swoje 
+     │ przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #4
+
+	single_search: simulating move 2210 -> 210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 210;	cost 4190.0;	cutoff: 1990.0
+	single_search: total stats 210
+	single_search: cost bigger than cutoff (4190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 5
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Wizard), który ucieka do sąsiedniej lokacji (Wizards_hut), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #5
+
+	single_search: simulating move 2210 -> 2210 | already in transpo. trying next move 
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 6
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Wizard), który ucieka do sąsiedniej lokacji (Forest), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #6
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 7
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Wizard), który ucieka do sąsiedniej lokacji (Pasture), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #7
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 8
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Wizard), który ucieka do sąsiedniej lokacji (Village), gubiąc 
+     │ wszystkie swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #8
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Fight ending with character’s escape / Walka zakończona ucieczką uczestnika variant 9
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Wizard), który ucieka do sąsiedniej lokacji (Inn), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #9
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Dropping item / Odłożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Sword) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #2 and variant #0
+
+	single_search: simulating move 2210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Dropping item / Odłożenie przedmiotu variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Poison) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #2 and variant #1
+
+	single_search: simulating move 2210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Putting item in inside of inventory / Włożenie przedmiotu wewnątrz ekwipunku variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu wewnątrz ekwipunku. Main_hero wkłada przedmiot (Sword) do 
+     │ innego przedmiotu (Poison) w sytuacji gdy oba przedmioty znajduja się 
+     │ w ekwipunku postaci.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #3 and variant #0
+
+	single_search: simulating move 2210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Putting item in inside of inventory / Włożenie przedmiotu wewnątrz ekwipunku variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu wewnątrz ekwipunku. Main_hero wkłada przedmiot (Poison) do 
+     │ innego przedmiotu (Sword) w sytuacji gdy oba przedmioty znajduja się 
+     │ w ekwipunku postaci.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #3 and variant #1
+
+	single_search: simulating move 2210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Overwhelming character / Przejęcie kontroli nad postacią variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie kontroli nad postacią. Stworzenie grupy z dwóch bohaterów: Main_hero 
+     │ przejmuje kontrolę nad inną postacią (Wizard).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #4 and variant #0
+
+	single_search: simulating move 2210 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Item acquisition from another character / Przejęcie przedmiotu od innej postaci variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie przedmiotu od innej postaci. Main_hero oddaje drugiemu bohaterowi 
+     │ (Wizard) przedmiot (Sword).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #5 and variant #0
+
+	single_search: simulating move 2210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Item acquisition from another character / Przejęcie przedmiotu od innej postaci variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie przedmiotu od innej postaci. Main_hero oddaje drugiemu bohaterowi 
+     │ (Wizard) przedmiot (Poison).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #5 and variant #1
+
+	single_search: simulating move 2210 -> 1210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1210;	cost 3190.0;	cutoff: 1990.0
+	single_search: total stats 1210
+	single_search: cost bigger than cutoff (3190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2210;	cost 1990.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: no more actions: depth decreased
+	single_search:	depth: 5;	state total_stats 2210;	cost 1790.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: action Picking item up / Podniesienie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Podniesienie przedmiotu. Main_hero podnosi przedmiot (Elixir) leżący w lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 5 | assigned action #1 and variant #0
+
+	single_search: simulating move 2210 -> 2220 | new move! adding to transpo table 
+		transpo:	adding state at depth: 6
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: heuristic_estimate 780 lower than best_cost 790
+	single_search: action Location change / Zmiana lokacji variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #0 and variant #0
+
+	single_search: simulating move 2220 -> 2220 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2220;	cost 2180.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: cost bigger than cutoff (2180.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Dropping item / Odłożenie przedmiotu variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Sword) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #0
+
+	single_search: simulating move 2220 -> 1220 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1220;	cost 3180.0;	cutoff: 1990.0
+	single_search: total stats 1220
+	single_search: cost bigger than cutoff (3180.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Dropping item / Odłożenie przedmiotu variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Poison) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #1
+
+	single_search: simulating move 2220 -> 1220 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1220;	cost 3180.0;	cutoff: 1990.0
+	single_search: total stats 1220
+	single_search: cost bigger than cutoff (3180.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Dropping item / Odłożenie przedmiotu variant 2
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odłożenie przedmiotu. Main_hero odkłada przedmiot (Elixir) do lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #1 and variant #2
+
+	single_search: simulating move 2220 -> 2210 | already in transpo. trying next move 
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Putting item in inside of inventory / Włożenie przedmiotu wewnątrz ekwipunku variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu wewnątrz ekwipunku. Main_hero wkłada przedmiot (Sword) do 
+     │ innego przedmiotu (Poison) w sytuacji gdy oba przedmioty znajduja się 
+     │ w ekwipunku postaci.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #2 and variant #0
+
+	single_search: simulating move 2220 -> 1220 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1220;	cost 3180.0;	cutoff: 1990.0
+	single_search: total stats 1220
+	single_search: cost bigger than cutoff (3180.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Putting item in inside of inventory / Włożenie przedmiotu wewnątrz ekwipunku variant 1
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu wewnątrz ekwipunku. Main_hero wkłada przedmiot (Sword) do 
+     │ innego przedmiotu (Elixir) w sytuacji gdy oba przedmioty znajduja się 
+     │ w ekwipunku postaci.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #2 and variant #1
+
+	single_search: simulating move 2220 -> 1220 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1220;	cost 3180.0;	cutoff: 1990.0
+	single_search: total stats 1220
+	single_search: cost bigger than cutoff (3180.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Putting item in inside of inventory / Włożenie przedmiotu wewnątrz ekwipunku variant 2
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu wewnątrz ekwipunku. Main_hero wkłada przedmiot (Poison) do 
+     │ innego przedmiotu (Sword) w sytuacji gdy oba przedmioty znajduja się 
+     │ w ekwipunku postaci.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #2 and variant #2
+
+	single_search: simulating move 2220 -> 1220 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1220;	cost 3180.0;	cutoff: 1990.0
+	single_search: total stats 1220
+	single_search: cost bigger than cutoff (3180.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Putting item in inside of inventory / Włożenie przedmiotu wewnątrz ekwipunku variant 3
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu wewnątrz ekwipunku. Main_hero wkłada przedmiot (Poison) do 
+     │ innego przedmiotu (Elixir) w sytuacji gdy oba przedmioty znajduja się 
+     │ w ekwipunku postaci.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #2 and variant #3
+
+	single_search: simulating move 2220 -> 1220 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 1220;	cost 3180.0;	cutoff: 1990.0
+	single_search: total stats 1220
+	single_search: cost bigger than cutoff (3180.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Putting item in inside of inventory / Włożenie przedmiotu wewnątrz ekwipunku variant 4
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu wewnątrz ekwipunku. Main_hero wkłada przedmiot (Elixir) do 
+     │ innego przedmiotu (Sword) w sytuacji gdy oba przedmioty znajduja się 
+     │ w ekwipunku postaci.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #2 and variant #4
+
+	single_search: simulating move 2220 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Putting item in inside of inventory / Włożenie przedmiotu wewnątrz ekwipunku variant 5
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Włożenie przedmiotu wewnątrz ekwipunku. Main_hero wkłada przedmiot (Elixir) do 
+     │ innego przedmiotu (Poison) w sytuacji gdy oba przedmioty znajduja się 
+     │ w ekwipunku postaci.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #2 and variant #5
+
+	single_search: simulating move 2220 -> 2210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 2210;	cost 2190.0;	cutoff: 1990.0
+	single_search: total stats 2210
+	single_search: cost bigger than cutoff (2190.0 > 1990.0)
+	single_search:	depth: 6;	state total_stats 2220;	cost 1980.0;	cutoff: 1990.0
+	single_search: total stats 2220
+	single_search: action Nutrition / Odżywianie variant 0
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odżywianie. Main_hero odżywia/leczy się poprzez spożycie przedmiotu mającego 
+     │ wartość odżywczą (Elixir). Mniam.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+	single_search: depth: 6 | assigned action #3 and variant #0
+
+	single_search: simulating move 2220 -> 4210 | new move! adding to transpo table 
+		transpo:	adding state at depth: 7
+	single_search:	depth: 7;	state total_stats 4210;	cost 1400.0;	cutoff: 1990.0
+	single_search: total stats 4210
+
+ ----------  Goal 3000 is fulfilled. Current total_stats is 4210 ----------
+plan_action_series: goal reached
+Plan_action execution took 11.180525302886963 seconds.
+Final plan found.
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Inn).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Road.
+Nic w lokacji Inn.
+Single plan action #0: Location change / Zmiana lokacji
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie przedmiotu od innej postaci. Innkeeper oddaje drugiemu bohaterowi 
+     │ (Main_hero) przedmiot (Poison).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Inn.
+Single plan action #1: Item acquisition from another character / Przejęcie przedmiotu od innej postaci
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Inn.
+Nic w lokacji Road.
+Single plan action #2: Location change / Zmiana lokacji
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Wizards_hut).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Road.
+Nic w lokacji Wizards_hut.
+Single plan action #3: Location change / Zmiana lokacji
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Wizard), który ucieka do sąsiedniej lokacji (Road), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Wizards_hut.
+Nic w lokacji Road.
+Single plan action #4: Fight ending with character’s escape / Walka zakończona ucieczką uczestnika
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Podniesienie przedmiotu. Main_hero podnosi przedmiot (Elixir) leżący w lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Wizards_hut.
+Single plan action #5: Picking item up / Podniesienie przedmiotu
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odżywianie. Main_hero odżywia/leczy się poprzez spożycie przedmiotu mającego 
+     │ wartość odżywczą (Elixir). Mniam.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Wizards_hut.
+Single plan action #6: Nutrition / Odżywianie
+list_total_stats: [1210, 2210, 2210, 2210, 2210, 2220, 4210]
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │  SUCCESS!!! We have found the FINAL PLAN! Executing it now 😍😍😍
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Inn).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Road.
+Nic w lokacji Inn.
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │     który posiada przedmioty:
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Przejęcie przedmiotu od innej postaci. Innkeeper oddaje drugiemu bohaterowi 
+     │ (Main_hero) przedmiot (Poison).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Inn.
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Inn nie ma żadnych własności.
+     │ Przebywają w niej:
+     │ ☺ Innkeeper {'HP': 100, 'Money': 1200}
+     │ ☺ Drunkard {'HP': 100, 'Money': 0, 'IsTroublemaker': True}
+     │     który posiada przedmioty:
+     │     ❑ Alcohol {'Value': 3, 'NutritionalValue': 1, 'IsRotten': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Road).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Inn.
+Nic w lokacji Road.
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Road nie ma żadnych własności.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Zmiana lokacji. Main_hero przechodzi do sąsiedniej lokacji (Wizards_hut).
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Road.
+Nic w lokacji Wizards_hut.
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywają w niej:
+     │ ☺ Wizard {'HP': 200, 'Money': 100, 'IsAuthority': True}
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Walka zakończona ucieczką uczestnika. Jeden bohater (Main_hero) atakuje 
+     │ drugiego (Wizard), który ucieka do sąsiedniej lokacji (Road), gubiąc wszystkie 
+     │ swoje przedmioty w panicznej ucieczce.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Wizards_hut.
+Nic w lokacji Road.
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Znajduje się w niej: 
+     │ ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Podniesienie przedmiotu. Main_hero podnosi przedmiot (Elixir) leżący w lokacji.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Wizards_hut.
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     │     ❑ Elixir {'Value': 10, 'NutritionalValue': 1000}
+     └──────────────────────────────────────────────────────────────────────────────────────
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Odżywianie. Main_hero odżywia/leczy się poprzez spożycie przedmiotu mającego 
+     │ wartość odżywczą (Elixir). Mniam.
+     └──────────────────────────────────────────────────────────────────────────────────────
+
+#### Co musi wydarzyć się w świecie po ruchu postaci:
+Nic w lokacji Wizards_hut.
+     ┌──────────────────────────────────────────────────────────────────────────────────────
+     │ Lokacja Wizards_hut ma pewne właściwości: {'IsPrivate': True}.
+     │ Przebywa w niej:
+     │ ☺ Main_hero {'HP': 1100, 'Money': 10}
+     │     który posiada przedmioty:
+     │     ❑ Sword {'Value': 1000}
+     │     ❑ Poison {'Value': 1000, 'IsPoison': True}
+     └──────────────────────────────────────────────────────────────────────────────────────
+Plan length: 7
+Target goal: 3000
+Final stats: [1210, 2210, 2210, 2210, 2210, 2220, 4210]
+Program execution time: 14.563s
