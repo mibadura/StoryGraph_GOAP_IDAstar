@@ -1,4 +1,4 @@
-# System Procesu Decyzyjnego Postaci, SPDP, połączony z implementacją referencyjną systemu StoryGraph.
+# System Procesu Decyzyjnego Postaci, SPDP, połączony z implementacją referencyjną systemu StoryGraph
 Niniejszy projekt obejmuje modyfikację implementacji referencyjnej systemu StoryGraph, dalej określanej terminem IRSG,
 w celu umożliwienia automatycznego wyszukiwania optymalnych serii akcji prowadzących do celu w grze opartej na systemie
 StoryGraph.
@@ -28,7 +28,7 @@ Przed uruchomieniem modułu SPDP, należy dodatkowo ustalić poniższe parametry
 `NewWorldStartSet`, oznaczone komentarzem `# MODIFY`
 
 Wszystkie parametry poza wagami statyk ustawiane są jako argumenty funkcji `main` na końcu skryptu.
-Po ich modyfikacji wystarczy uruchomić skrypt. Poniżej znajduje się przykład ustawionych parametrów symulacji:
+Po ich modyfikacji wystarczy uruchomić skrypt `production_processor/module_SPDP.py`. Poniżej znajduje się przykład ustawionych parametrów symulacji:
 ```commandline
 if __name__ == "__main__":
     full_execution_time = main(_max_depth=9, _goal_value=3211, _cost_of_action=200, _output_folder='test_output_1')
@@ -37,7 +37,7 @@ if __name__ == "__main__":
 SPDP tworzy plik tekstowy w folderze określonym w argumencie `_output_folder` funkcji `main`. To tam zapisywane są
 wykonywane przez SPDP akcje i obliczenia. Wynik nie jest wypisywany w konsoli ze względu na swój rozmiar — stworzony
 plik tekstowy może mieć setki MB.
-Na końcu pliku tekstowego możemy znaleźć opic akcji wykonanych przez skrypt po znalezieniu drogi do celu.
+Na końcu pliku tekstowego możemy znaleźć opis akcji wykonanych przez skrypt po znalezieniu drogi do celu.
 ## Poniżej znajduje się oryginalna wersja README dla Implementacji Referencyjnej systemu StoryGraph
 
 ---
