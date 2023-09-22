@@ -38,6 +38,11 @@ SPDP tworzy plik tekstowy w folderze określonym w argumencie `_output_folder` f
 wykonywane przez SPDP akcje i obliczenia. Wynik nie jest wypisywany w konsoli ze względu na swój rozmiar — stworzony
 plik tekstowy może mieć setki MB.
 Na końcu pliku tekstowego możemy znaleźć opis akcji wykonanych przez skrypt po znalezieniu drogi do celu.
+
+**[Nagranie przedstawiające uruchomienie SPDP i interpretację wyników symulacji](https://youtu.be/i7KamXAazfc)**
+
+#### UWAGA! W związku z wprowadzonymi modyfikacjami, skrypt `production_processor/application.py` nie działa już poprawnie. Należy używać skryptu `production_processor/module_SPDP.py`
+
 ## Poniżej znajduje się oryginalna wersja README dla Implementacji Referencyjnej systemu StoryGraph
 
 ---

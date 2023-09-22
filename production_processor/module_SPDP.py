@@ -846,5 +846,5 @@ def main(_max_depth, _goal_value, _cost_of_action, _output_folder):
 
 
 if __name__ == "__main__":
-    full_execution_time = main(_max_depth=9, _goal_value=3000, _cost_of_action=200, _output_folder='test_output_1')
+    full_execution_time = main(_max_depth=9, _goal_value=3000, _cost_of_action=200, _output_folder='test_output_2')
     print(f'Program execution time: {round(full_execution_time, 3)}s')
